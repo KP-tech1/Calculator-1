@@ -18,11 +18,11 @@
 
 2. <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">GATE Programme</span>provides financial assistance to citizens of Trinidad and Tobago,<span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">who are pursuing GATE-approved tertiary level programmes at COSTAATT.</span><br>
 
-3. <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">COMPASS Courses</span> are <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">only GATE-funded</span> if you're registered in the COMPASS Programme.<br>
+3. <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">COMPASS Courses</span>are<span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">only GATE-funded</span> if you're registered in the COMPASS Programme.<br>
 
-4. <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">Please note that GATE does not cover</span>the cost of withdrawn and repeated courses. Full tuition payment payment must be made by the Academic Calendar Deadline.<span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;"> Full tuition</span>payment must be made by the stated deadline.<br>
+4. <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">Please note that GATE does not cover</span>the cost of withdrawn and repeated courses. These are self-funded courses that must be paid by the Academic Calendar Deadline.<br>
 
-5. If you are a <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">postgraduate student</span>, select the <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">Postgraduate</span> tab for course details and registration.<br>
+5. If you are a <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">\Postgraduate student</span>, select the <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">Postgraduate</span> tab to calculate your next fee payment.<br>
 
 6. Click <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">Add Row</span> to include more courses (up to a maximum of <span style="background-color: #ede7f6; font-weight: bold; padding: 2px 5px;">8 rows</span>).<br>
 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="calculator-card">
-      <h3>Tuition Calculator (Late Fee Applies from 1st October, 2025)</h3>
+      <h3>Student Fee Calculator (Late Fee Applies from 1st October, 2025)</h3>
       
       <div class="controls">
         <button class="btn-primary" id="addRowBtn">
@@ -71,12 +71,12 @@
       </table>
     </div>
 
-    <div class="calculator-card">
+   <div class="calculator-card">
       <h3>College Fees Calculator</h3>
       
       <div class="fee-calculator">
         <div class="fee-item">
-          <label for="registrationFee">Registration Fee:</label>
+          <label for="registrationFee">College Fees:</label>
           <select id="registrationFee">
             <option value="0">$0</option>
             <option value="280">$280</option>
@@ -217,7 +217,7 @@ function updateCourseOptions(index) {
   // Add new options based on current course type
   const allowedCourseTypes = currentCourseType === 'undergrad' ? 
     ['Compass Course', 'Undergraduate Course', 'Repeated Course'] : 
-    ['Compass Course', 'Postgraduate Course', 'Repeated Course'];
+    ['Postgraduate Course', 'Repeated Course'];
   
   allowedCourseTypes.forEach(course => {
     const option = document.createElement('option');
