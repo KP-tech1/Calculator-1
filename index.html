@@ -1,125 +1,909 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>COSTAATT| COSTAATT Bursar Department</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> COSTAATT| COSTAATT Bursar Department</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<style>:root{--primary-color:#6a0dad;--secondary-color:#ff7043;--accent-color:#ff9800;--light-bg:#f9f9f9;--dark-bg:#1a1a2e;--dark-card:#16213e;--dark-text:#e6e6e6;--light-text:#333;--shadow:0 5px 15px rgba(0,0,0,0.1);--transition:all 0.3s ease}.dark-mode{--light-bg:var(--dark-bg);--light-text:var(--dark-text)}*{margin:0;padding:0;box-sizing:border-box;transition:var(--transition)}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:var(--light-bg);color:var(--light-text);line-height:1.6;padding:20px;transition:var(--transition)}.container{max-width:1200px;margin:0 auto}header{text-align:center;margin-bottom:30px;padding:20px;border-radius:15px;background:linear-gradient(135deg,var(--primary-color),#8a2be2);color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}header::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgb(255 255 255 / .1) 0%,#fff0 70%);z-index:0}header h1{font-size:2.5rem;margin-bottom:10px;position:relative;z-index:1}header p{font-size:1.2rem;opacity:.9;position:relative;z-index:1}.theme-toggle{position:absolute;top:20px;right:20px;background:rgb(255 255 255 / .2);border:none;border-radius:50%;width:50px;height:50px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;z-index:1;transition:var(--transition)}.theme-toggle:hover{transform:rotate(30deg);background:rgb(255 255 255 / .3)}.calculator-card{background-color:#fff;border-radius:15px;box-shadow:var(--shadow);padding:25px;margin-bottom:25px;transition:var(--transition)}.dark-mode .calculator-card{background-color:var(--dark-card)}h2,h3{color:var(--primary-color);margin-bottom:20px;display:flex;align-items:center}.dark-mode h2,.dark-mode h3{color:var(--secondary-color)}h2::before,h3::before{margin-right:10px;font-size:1.5em}h2::before{content:"📊"}h3::before{content:"💰"}.controls{display:flex;gap:15px;margin-bottom:20px;flex-wrap:wrap}button{padding:12px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:700;transition:var(--transition);display:flex;align-items:center;gap:8px}.btn-primary{background-color:var(--primary-color);color:#fff}.btn-primary:hover{background-color:#5a0b9d;transform:translateY(-2px);box-shadow:0 4px 8px rgb(0 0 0 / .15)}.btn-secondary{background-color:var(--secondary-color);color:#fff}.btn-secondary:hover{background-color:#e65c3e;transform:translateY(-2px);box-shadow:0 4px 8px rgb(0 0 0 / .15)}.btn-accent{background-color:var(--accent-color);color:#fff}.btn-accent:hover{background-color:#e68900;transform:translateY(-2px);box-shadow:0 4px 8px rgb(0 0 0 / .15)}button:disabled{background-color:#ccc;cursor:not-allowed;transform:none;box-shadow:none}table{width:100%;border-collapse:collapse;background-color:#fff;box-shadow:0 0 10px rgb(0 0 0 / .05);border-radius:10px;overflow:hidden;margin-bottom:20px}.dark-mode table{background-color:var(--dark-card)}th,td{padding:15px;text-align:center;border-bottom:1px solid #e0e0e0}.dark-mode th,.dark-mode td{border-bottom:1px solid #2d3746}th{background-color:var(--primary-color);color:#fff;font-weight:600;text-transform:uppercase;font-size:14px}tr:nth-child(even){background-color:#f8f4ff}.dark-mode tr:nth-child(even){background-color:#1f2a40}tr:hover{background-color:#f0e5ff}.dark-mode tr:hover{background-color:#2a3650}input,select{padding:10px;border-radius:6px;border:1px solid #ddd;transition:var(--transition);width:100%}.dark-mode input,.dark-mode select{background-color:#2d3746;border-color:#3a4558;color:var(--dark-text)}input:focus,select:focus{border-color:var(--primary-color);outline:none;box-shadow:0 0 5px rgb(106 13 173 / .3)}.total-display{font-weight:700;color:var(--primary-color);font-size:18px}.dark-mode .total-display{color:var(--secondary-color)}.fee-calculator{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:20px}.fee-item{display:flex;flex-direction:column}.fee-item label{font-weight:700;margin-bottom:8px;color:var(--primary-color)}.dark-mode .fee-item label{color:var(--secondary-color)}.fee-input{position:relative}.fee-input::before{content:"$";position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#666}.fee-input input{padding-left:25px}.totals-section{background-color:#f3e5f5;padding:20px;border-radius:10px;margin-top:20px;box-shadow:0 2px 5px rgb(0 0 0 / .1)}.dark-mode .totals-section{background-color:#2a1b3d}.totals-section div{display:flex;justify-content:space-between;margin-bottom:10px}.grand-total{font-size:24px;font-weight:700;border-top:2px solid var(--primary-color);padding-top:15px;margin-top:15px}.dark-mode .grand-total{border-top-color:var(--secondary-color)}.disclaimer{background-color:#fff8e6;border-left:5px solid #ffa726;padding:20px;margin-top:30px;border-radius:0 10px 10px 0;box-shadow:0 2px 5px rgb(0 0 0 / .05)}.dark-mode .disclaimer{background-color:#332b1a;border-left-color:#e68900}.disclaimer h3{margin-top:0;color:#e65100;border-bottom:1px solid #e0c800;padding-bottom:10px}.dark-mode .disclaimer h3{color:#ffa726}.disclaimer p{margin-bottom:15px}.disclaimer ol{margin:15px 0;padding-left:20px}.disclaimer li{margin-bottom:10px}.course-type-tabs{display:flex;margin-bottom:20px;border-bottom:2px solid #e0e0e0}.dark-mode .course-type-tabs{border-bottom-color:#3a4558}.course-type-tab{padding:12px 24px;cursor:pointer;background-color:#f1f1f1;border:1px solid #ddd;border-bottom:none;margin-right:5px;border-radius:8px 8px 0 0;transition:var(--transition)}.dark-mode .course-type-tab{background-color:#2d3746;border-color:#3a4558;color:var(--dark-text)}.course-type-tab.active{background-color:var(--primary-color);color:#fff;border-color:var(--primary-color)}.dark-mode .course-type-tab.active{background-color:var(--secondary-color);border-color:var(--secondary-color)}.short-courses-section{display:none}.instructions{background-color:#ede7f6;border-left:5px solid var(--primary-color);padding:20px;margin-bottom:30px;border-radius:0 10px 10px 0;display:none}.dark-mode .instructions{background-color:#2a1b3d;border-left-color:var(--secondary-color)}.instructions.show{display:block}@media (max-width:768px){.fee-calculator{grid-template-columns:1fr}.course-type-tabs{flex-direction:column}.course-type-tab{border-radius:8px;margin-bottom:5px}header h1{font-size:2rem}}
-.download-section {
-  margin-top: 20px;
+  <style>
+    :root {
+      --primary-color: #6a0dad;
+      --secondary-color: #ff7043;
+      --accent-color: #ff9800;
+      --light-bg: #f9f9f9;
+      --dark-bg: #1a1a2e;
+      --dark-card: #16213e;
+      --dark-text: #e6e6e6;
+      --light-text: #333;
+      --shadow: 0 5px 15px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+
+    .dark-mode {
+      --light-bg: var(--dark-bg);
+      --light-text: var(--dark-text);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: var(--transition);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--light-text);
+      line-height: 1.6;
+      padding: 20px;
+      transition: var(--transition);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--primary-color), #8a2be2);
+      color: white;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      z-index: 0;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      z-index: 1;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(30deg);
+      background: rgba(255,255,255,0.3);
+    }
+
+    .calculator-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: var(--transition);
+    }
+
+    .dark-mode .calculator-card {
+      background-color: var(--dark-card);
+    }
+
+    h2, h3 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .dark-mode h2, .dark-mode h3 {
+      color: var(--secondary-color);
+    }
+
+    h2::before, h3::before {
+      margin-right: 10px;
+      font-size: 1.5em;
+    }
+
+    h2::before {
+      content: "📊";
+    }
+
+    h3::before {
+      content: "💰";
+    }
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #5a0b9d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: #e65c3e;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn-accent {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background-color: #e68900;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .dark-mode table {
+      background-color: var(--dark-card);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .dark-mode th, .dark-mode td {
+      border-bottom: 1px solid #2d3746;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f4ff;
+    }
+
+    .dark-mode tr:nth-child(even) {
+      background-color: #1f2a40;
+    }
+
+    tr:hover {
+      background-color: #f0e5ff;
+    }
+
+    .dark-mode tr:hover {
+      background-color: #2a3650;
+    }
+
+    input, select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .dark-mode input, .dark-mode select {
+      background-color: #2d3746;
+      border-color: #3a4558;
+      color: var(--dark-text);
+    }
+
+    input:focus, select:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 5px rgba(106,13,173,0.3);
+    }
+
+    .total-display {
+      font-weight: bold;
+      color: var(--primary-color);
+      font-size: 18px;
+    }
+
+    .dark-mode .total-display {
+      color: var(--secondary-color);
+    }
+
+    .fee-calculator {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .fee-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fee-item label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
+
+    .dark-mode .fee-item label {
+      color: var(--secondary-color);
+    }
+
+    .fee-input {
+      position: relative;
+    }
+
+    .fee-input::before {
+      content: "$";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+    }
+
+    .fee-input input {
+      padding-left: 25px;
+    }
+
+    .totals-section {
+      background-color: #f3e5f5;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dark-mode .totals-section {
+      background-color: #2a1b3d;
+    }
+
+    .totals-section div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .grand-total {
+      font-size: 24px;
+      font-weight: bold;
+      border-top: 2px solid var(--primary-color);
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+
+    .dark-mode .grand-total {
+      border-top-color: var(--secondary-color);
+    }
+
+    .disclaimer {
+      background-color: #fff8e6;
+      border-left: 5px solid #ffa726;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .dark-mode .disclaimer {
+      background-color: #332b1a;
+      border-left-color: #e68900;
+    }
+
+    .disclaimer h3 {
+      margin-top: 0;
+      color: #e65100;
+      border-bottom: 1px solid #e0c800;
+      padding-bottom: 10px;
+    }
+
+    .dark-mode .disclaimer h3 {
+      color: #ffa726;
+    }
+
+    .disclaimer p {
+      margin-bottom: 15px;
+    }
+
+    .disclaimer ol {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    .disclaimer li {
+      margin-bottom: 10px;
+    }
+
+    .course-type-tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .dark-mode .course-type-tabs {
+      border-bottom-color: #3a4558;
+    }
+
+.notice-tab {
+  background-color: #ffeb3b !important;
+  color: #333 !important;
+  border: 1px solid #ffc107 !important;
+}
+
+.notice-tab:hover {
+  background-color: #fdd835 !important;
+  transform: translateY(-2px);
+}
+
+.notice-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.dark-mode .notice-popup {
+  background: var(--dark-card);
+  color: var(--dark-text);
+}
+
+.notice-popup.show {
+  display: block;
+}
+
+.notice-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.notice-overlay.show {
+  display: block;
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.dark-mode .notice-header {
+  border-bottom-color: var(--secondary-color);
+}
+
+.notice-content {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.notice-content h3 {
+  color: var(--primary-color);
+  margin: 25px 0 15px 0;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.dark-mode .notice-content h3 {
+  color: var(--secondary-color);
+  border-bottom-color: #3a4558;
+}
+
+.notice-content h4 {
+  color: var(--primary-color);
+  margin: 20px 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.dark-mode .notice-content h4 {
+  color: var(--secondary-color);
+}
+
+.notice-content ul, .notice-content ol {
+  margin: 10px 0 15px 0;
+  padding-left: 30px;
+}
+
+.notice-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.notice-content p {
+  margin-bottom: 15px;
+}
+
+.notice-content .sub-list {
+  padding-left: 20px;
+  margin: 5px 0;
+}
+
+.notice-content .declaration-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  margin: 20px 0;
+}
+
+.dark-mode .notice-content .declaration-section {
+  background: #2a1b3d;
+  border-left-color: var(--secondary-color);
+}
+
+.notice-content .payment-methods {
+  background: #e8f4fd;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.dark-mode .notice-content .payment-methods {
+  background: #1a2e3d;
+}
+
+.close-notice {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.close-notice:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.dark-mode .close-notice {
+  color: var(--secondary-color);
+}
+
+.dark-mode .close-notice:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.notice-intro {
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff3cd;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+}
+
+.dark-mode .notice-intro {
+  background: #332b1a;
+  border-left-color: #e68900;
+}
+
+.agreement-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
   text-align: center;
 }
 
-.download-btn {
-  background: linear-gradient(135deg, #6a0dad, #8a2be2);
+.dark-mode .agreement-footer {
+  border-top-color: #3a4558;
+}
+
+.agree-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
   color: white;
-  padding: 15px 30px;
   border: none;
-  border-radius: 8px;
+  padding: 15px 40px;
   font-size: 16px;
   font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-flex;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.agree-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #45a049, #4CAF50);
+}
+
+.student-info-form {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+.dark-mode .student-info-form {
+  background: #2a1b3d;
+  border-left-color: var(--secondary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.dark-mode .form-group label {
+  color: var(--secondary-color);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.dark-mode .form-group input {
+  background: var(--dark-card);
+  border-color: #3a4558;
+  color: var(--dark-text);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 8px rgba(106, 13, 173, 0.3);
+}
+
+.agreement-status {
+  background: linear-gradient(135deg, #e8f5e8, #d4edda);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border-left: 4px solid #28a745;
+  display: none;
+}
+
+.dark-mode .agreement-status {
+  background: linear-gradient(135deg, #1a331a, #155724);
+  border-left-color: #20c997;
+}
+
+.download-section {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border-left: 4px solid #2196F3;
+  display: none;
+}
+
+.dark-mode .download-section {
+  background: linear-gradient(135deg, #1a237e, #283593);
+  border-left-color: #2196F3;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0 auto;
 }
 
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
-}
-.student-info-section {
-  margin-bottom: 25px;
-  padding: 20px;
-  background-color: #f8f4ff;
-  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+  background: linear-gradient(135deg, #1976D2, #1565C0);
 }
 
-.dark-mode .student-info-section {
-  background-color: #2a1b3d;
-}
-
-.agreement-content {
-  margin-top: 20px;
-}
-
-.terms-box {
-  background-color: #fff;
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  padding: 25px;
-  margin-bottom: 25px;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.dark-mode .terms-box {
-  background-color: var(--dark-card);
-  border-color: var(--secondary-color);
-}
-
-.terms-box h4 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.dark-mode .terms-box h4 {
-  color: var(--secondary-color);
-}
-
-.terms-box ol {
-  margin: 15px 0;
-  padding-left: 20px;
-}
-
-.terms-box li {
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.signature-section {
-  margin: 25px 0;
-}
-
-.signature-pad-container {
-  border: 2px dashed #ddd;
-  border-radius: 8px;
+.student-info-display {
+  background: #fff3cd;
   padding: 15px;
-  background-color: #fff;
-  margin-top: 10px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 2px solid #ffc107;
+  display: none;
 }
 
-.dark-mode .signature-pad-container {
-  background-color: var(--dark-card);
-  border-color: #3a4558;
-}
-
-#signaturePad {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: crosshair;
-}
-
-.agreement-controls {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 25px;
+.dark-mode .student-info-display {
+  background: #332b1a;
+  border-color: #e68900;
 }
 
 @media (max-width: 768px) {
-  .agreement-controls {
-    flex-direction: column;
+  .notice-popup {
+    padding: 20px;
+    width: 98%;
   }
   
-  #signaturePad {
-    width: 100%;
-    height: 120px;
+  .notice-content {
+    font-size: 13px;
+  }
+  
+  .agree-btn {
+    padding: 12px 30px;
+    font-size: 14px;
   }
 }
+.pdf-download-btn {
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
 
-</style>
+.pdf-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+  background: linear-gradient(135deg, #b71c1c, #c62828);
+}
+
+.pdf-preview {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+}
+
+.dark-mode .pdf-preview {
+  background: var(--dark-card);
+  border-color: #3a4558;
+}
+
+.pdf-preview-content {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.4;
+}
+
+.pdf-header {
+  text-align: center;
+  border-bottom: 3px solid #6a0dad;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.pdf-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.dark-mode .pdf-section {
+  background: #2a1b3d;
+  border-color: #3a4558;
+}
+
+.pdf-totals {
+  background: #e8f5e8 !important;
+  border-left: 4px solid #4caf50 !important;
+}
+
+.dark-mode .pdf-totals {
+  background: #1a331a !important;
+  border-left-color: #4caf50 !important;
+}
+
+.pdf-agreement {
+  background: #fff3cd !important;
+  border-left: 4px solid #ff9800 !important;
+}
+
+.dark-mode .pdf-agreement {
+  background: #332b1a !important;
+  border-left-color: #ff9800 !important;
+}
+
+.pdf-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px dashed #ccc;
+  font-size: 12px;
+  color: #666;
+}
+
+.download-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+    .course-type-tab {
+      padding: 12px 24px;
+      cursor: pointer;
+      background-color: #f1f1f1;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      margin-right: 5px;
+      border-radius: 8px 8px 0 0;
+      transition: var(--transition);
+    }
+
+    .dark-mode .course-type-tab {
+      background-color: #2d3746;
+      border-color: #3a4558;
+      color: var(--dark-text);
+    }
+
+    .course-type-tab.active {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .dark-mode .course-type-tab.active {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+
+    .short-courses-section {
+      display: none;
+    }
+
+    .instructions {
+      background-color: #ede7f6;
+      border-left: 5px solid var(--primary-color);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 0 10px 10px 0;
+      display: none;
+    }
+
+    .dark-mode .instructions {
+      background-color: #2a1b3d;
+      border-left-color: var(--secondary-color);
+    }
+
+    .instructions.show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .fee-calculator {
+        grid-template-columns: 1fr;
+      }
+      
+      .course-type-tabs {
+        flex-direction: column;
+      }
+      
+      .course-type-tab {
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -133,7 +917,7 @@
       <span>📝</span> Show Instructions
     </button>
 
-<div class="instructions" id="instructions">
+    <div class="instructions" id="instructions">
   <strong style="font-size: 16px;">📝 Instructions:</strong><br><br>
   
   <div style="display: flex; align-items: flex-start; margin-bottom: 10px;">
@@ -172,23 +956,219 @@
   </div>
 </div>
 
-<style>
-.highlight {
-  background-color: #ede7f6;
-  font-weight: bold;
-  padding: 2px 5px;
-}
-</style>
+<div class="course-type-tabs">
+  <div class="course-type-tab active" id="undergradTab" onclick="switchCourseType('undergrad')">Undergraduate Courses</div>
+  <div class="course-type-tab" id="gradTab" onclick="switchCourseType('grad')">Postgraduate Courses</div>
+  <div class="course-type-tab notice-tab" onclick="showPaymentNotice()">
+    <span>📄</span> View Terms
+  </div>
+</div>
 
+<!-- Agreement Status Display -->
+<div class="agreement-status" id="agreementStatus">
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <span style="font-size: 24px;">✅</span>
+    <div>
+      <strong>Financial Responsibility Agreement Accepted</strong><br>
+      <span id="agreementDetails">By: [Student Name] | ID: [Student ID] | Date: [Agreement Date]</span>
+    </div>
+  </div>
+</div>
 
-    <div class="course-type-tabs">
-      <div class="course-type-tab active" id="undergradTab" onclick="switchCourseType('undergrad')">Undergraduate Courses</div>
-      <div class="course-type-tab" id="gradTab" onclick="switchCourseType('grad')">Postgraduate Courses</div>
-      <div class="course-type-tab" id="agreementTab" onclick="switchCourseType('agreement')">Payment Terms Agreement</div>
+<!-- Student Info Display -->
+<div class="student-info-display" id="studentInfoDisplay">
+  <strong>Student Information:</strong><br>
+  <span id="displayStudentName"></span> | <span id="displayStudentId"></span>
+</div>
+
+<!-- Download Section -->
+<div class="download-section" id="downloadSection">
+  <div style="text-align: center;">
+    <h4 style="margin-bottom: 15px; color: #1976D2;">📊 Download Your Fee Calculation</h4>
+    <p style="margin-bottom: 20px;">Download a professional PDF report of your fees including your agreement to the financial terms.</p>
+    
+    <div class="download-options">
+      <button class="download-btn" onclick="generatePDFReport()">
+        </span> Download PDF Report
+      </button>
+      <button class="pdf-download-btn" onclick="previewPDF()">
+        </span> Preview PDF
+      </button>
+    </div>
+    
+    <div class="pdf-preview" id="pdfPreview">
+      <div class="pdf-preview-content" id="pdfPreviewContent">
+        <!-- PDF content will be generated here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notice Popup -->
+<div class="notice-overlay" id="noticeOverlay" onclick="closePaymentNotice()"></div>
+<div class="notice-popup" id="noticePopup">
+  <div class="notice-header">
+    <h3>COSTAATT PAYMENT TERMS AND STUDENT FINANCIAL RESPONSIBILITY AGREEMENT</h3>
+    <button class="close-notice" onclick="closePaymentNotice()">×</button>
+  </div>
+  <div class="notice-content">
+    <div class="notice-intro">
+      <strong>Dear Student,</strong><br><br>
+      COSTAATT offers training programmes that are both GATE-funded and non-GATE-funded. Regardless of funding status, all students are financially responsible for the full and timely payment of tuition, college fees, and any other applicable fees, in accordance with the deadlines outlined in the Academic Calendar.
     </div>
 
+    <!-- Your document content remains exactly the same -->
+    <h3>1. GATE Funding and Student Responsibility</h3>
+    <ul>
+      <li>Students may be eligible for 100%, 75%, or 50% GATE funding, depending on the programme and their GATE status.</li>
+      <li>Even when tuition or fees are expected to be covered by GATE or another sponsor, students remain ultimately responsible for settling any unpaid balance.</li>
+    </ul>
+    <p>GATE does not cover the cost of withdrawn courses, repeated courses, or COMPASS level courses for students enrolled in programmes other than the COMPASS Certificate programme.</p>
+    <p>Students must pay the full tuition for all withdrawn, repeated, or COMPASS courses, where necessary, by the tuition payment deadline for the relevant semester.</p>
+
+    <h3>2. GATE Application Deadline</h3>
+    <ul>
+      <li>Students who wish to access GATE funding must submit their GATE application by the deadline stated on the Academic Calendar.</li>
+      <li>Failure to submit the GATE application on time will result in the student being fully responsible for payment of tuition for that semester.</li>
+      <li>Students are strongly advised to review the Academic Calendar regularly and adhere to all relevant GATE and fee-related deadlines.</li>
+    </ul>
+
+    <h3>3. Types of Fees</h3>
+    
+    <h4>a) Tuition Fees</h4>
+    <ul>
+      <li>Tuition covers instructional costs and may be fully or partially covered by GATE or another approved sponsor.</li>
+      <li>Any unfunded portion of tuition is the responsibility of the student and must be paid by the published deadline stated in the Academic Calendar.</li>
+    </ul>
+
+    <h4>b) College Fees</h4>
+    <ul>
+      <li>College fees are mandatory institutional charges automatically applied to a student's account upon registration for courses.</li>
+      <li>If a student drops all courses within the official Add/Drop period (as stated in the Academic Calendar), college fees for that semester, minus the registration fee, will be reversed.</li>
+      <li>If a student withdraws after the Add/Drop period, college fees will remain payable and must be paid in full.</li>
+      <li>College fees are normally non-refundable. However, where withdrawal from the College occurs within the deadline for the Add/Drop period, college fees, minus the registration fee, may qualify for a refund.</li>
+      <li>College fees are not transferable to another student under any circumstances.</li>
+    </ul>
+
+    <h4>c) Other Fees</h4>
+    <ul>
+      <li>Additional fees may be charged throughout the semester, depending on the student's activity or circumstances. These may include:
+        <ul class="sub-list">
+          <li>Lab or course materials fees</li>
+          <li>Late payment fees</li>
+          <li>Administrative charges for services such as transcripts, letters, or replacement ID cards, etc.</li>
+        </ul>
+      </li>
+      <li>Students are responsible for monitoring their financial accounts and ensuring that all fees are paid promptly as they are assessed.</li>
+    </ul>
+
+    <h3>4. Payment Deadlines and Financial Holds</h3>
+    <ul>
+      <li>All tuition, college fees, and other applicable charges must be paid by the published deadlines in the Academic Calendar.</li>
+      <li>Students who fail to meet payment deadlines will have a financial hold placed on their accounts. This financial hold may and/or will block:
+        <ul class="sub-list">
+          <li>Access to classes</li>
+          <li>Future course registration</li>
+          <li>Viewing of grades</li>
+          <li>Issuance of transcripts, letters, diplomas, or other official documents</li>
+          <li>Access to other administrative and student service</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>5. Student Financial Responsibility</h3>
+    <p>It is the responsibility of all students of COSTAATT to:</p>
+    <ul>
+      <li>Familiarize themselves with the Academic Calendar and strictly adhere to all payment and application deadlines.</li>
+      <li>Monitor their student account regularly for tuition balances, college fees, and other charges.</li>
+      <li>Submit all GATE applications and supporting documents on time.</li>
+      <li>Settle any self-funded tuition, college fees, and other fees by the applicable deadlines.</li>
+      <li>Take full and personal responsibility for the timely maintenance of their student account throughout their time at the College.</li>
+    </ul>
+
+    <div class="payment-methods">
+      <h3>6. Payment Methods</h3>
+      <p>Before making any payment, please ensure you have the following details ready:</p>
+      <ul>
+        <li>Your 8-digit student ID</li>
+        <li>Amount to be paid</li>
+        <li>Relevant term/semester code (e.g., 202610)</li>
+      </ul>
+
+      <h4>Accepted Methods of Payment:</h4>
+      <ol>
+        <li><strong>Personal Online Banking (FCB and RBL only)</strong>
+          <ul class="sub-list">
+            <li>Login to your online banking account.</li>
+            <li>Add COSTAATT as a payee.</li>
+            <li>Include in your payment description: your student ID, type of fee, and term/semester.</li>
+          </ul>
+        </li>
+        <li><strong>Inter-Bank Transfer Online</strong>
+          <ul class="sub-list">
+            <li>Login to your online banking.</li>
+            <li>Transfer funds to:<br><strong>First Citizens Bank – Account Number: 1210236</strong></li>
+            <li>Include your student ID, type of fee, and term/semester in the description.</li>
+          </ul>
+        </li>
+        <li><strong>In-Person Payments (LINX and Credit Card only)</strong>
+          <ul class="sub-list">
+            <li>Accepted at COSTAATT campus cashier stations.</li>
+            <li>Cash payments are not accepted.</li>
+            <li>LINX (debit) and credit card only.</li>
+          </ul>
+        </li>
+        <li><strong>COSTAATT's ePay Service (more details to follow)</strong></li>
+      </ol>
+
+      <h4>After Payment:</h4>
+      <ul>
+        <li>Retain a printout, photograph, or screenshot of your payment receipt.</li>
+        <li>For payments not made via COSTAATT's online payment portal or in-person at a COSTAATT campus, email proof of payment to: <strong>payments@costaatt.edu.tt</strong></li>
+        <li>Monitor your student email for confirmation that your payment was received and processed.</li>
+      </ul>
+      <p><strong>Note:</strong> It is extremely important that all payment details are provided correctly. Incomplete or incorrect information will delay processing, as the Bursar's Office must verify the payee's identity, payment type, and semester prior to posting the payment.</p>
+    </div>
+
+    <div class="declaration-section">
+      <h3>STUDENT DECLARATION ON FINANCIAL RESPONSIBILITY</h3>
+      <p>I have read, understood, and agree to abide by all COSTAATT payment terms and conditions as outlined in this document and the College's Academic Calendar.</p>
+      
+      <p>I acknowledge that:</p>
+      <ol>
+        <li>I am personally and fully responsible for the payment of all tuition, college fees, and any other applicable charges associated with my enrolment at COSTAATT, regardless of my funding status or eligibility for GATE or any other sponsorship.</li>
+        <li>I understand that GATE and/or other sponsors may not cover certain fees or courses (including repeated, withdrawn, or COMPASS courses, as applicable), and that I remain solely responsible for settling any outstanding balances by the published payment deadlines.</li>
+        <li>I accept that failure to meet payment deadlines may result in the placement of a financial hold on my account, which may restrict my access to classes, registration, grades, transcripts, or other College services.</li>
+        <li>I understand that College fees are non-refundable and non-transferable, except where otherwise provided in the College's refund policy and within the specified deadlines.</li>
+        <li>I agree to monitor my student account regularly, to ensure all fees are paid promptly and in full, and to maintain up-to-date records of all payments made to COSTAATT.</li>
+        <li>I accept that all financial obligations must be met before I can graduate or access any official College documentation.</li>
+      </ol>
+    </div>
+
+    <!-- Student Information Form -->
+    <div class="student-info-form" id="studentInfoForm">
+      <h4 style="text-align: center; margin-bottom: 20px;">🎓 Student Information</h4>
+      <div class="form-group">
+        <label for="studentName">Full Name (as registered):</label>
+        <input type="text" id="studentName" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="studentId">COSTAATT Student ID Number:</label>
+        <input type="text" id="studentId" placeholder="Enter your 8-digit student ID" pattern="[0-9]{8}" required>
+      </div>
+    </div>
+
+    <div class="agreement-footer">
+      <p style="margin-bottom: 20px; font-weight: bold;">By clicking "I Agree", you acknowledge that you have read, understood, and accept all the terms and conditions outlined above.</p>
+      <button class="agree-btn" onclick="acceptAgreement()">
+        ✅ I Agree to the Terms & Conditions
+      </button>
+    </div>
+  </div>
+</div>
+
     <div class="calculator-card">
-      <h3>Student Fee Calculator (Late Fee Applies from 1st October, 2025)</h3>
+      <h3>Tuition Calculator (Late Fee Applies from 1st October, 2025)</h3>
       
       <div class="controls">
         <button class="btn-primary" id="addRowBtn">
@@ -215,7 +1195,7 @@
         <tbody id="tableBody"></tbody>
         <tfoot>
           <tr>
-            <td colspan="6"><strong>Tuition Fees Total</strong></td>
+            <td colspan="6"><strong>Tuition Grand Total</strong></td>
             <td><span id="tuitionGrandTotal" class="total-display">$0.00</span></td>
             <td></td>
           </tr>
@@ -223,12 +1203,12 @@
       </table>
     </div>
 
-   <div class="calculator-card">
+    <div class="calculator-card">
       <h3>College Fees Calculator</h3>
       
       <div class="fee-calculator">
         <div class="fee-item">
-          <label for="registrationFee">College Fees:</label>
+          <label for="registrationFee">Registration Fee:</label>
           <select id="registrationFee">
             <option value="0">$0</option>
             <option value="280">$280</option>
@@ -271,77 +1251,6 @@
       </div>
     </div>
 
-<div class="calculator-card">
-  <div class="controls">
-    <button class="btn-primary" onclick="downloadCalculatorResults()">
-      <span>📄</span> Download Calculator Results (PDF)
-    </button>
-  </div>
-</div>
-
-<!-- Add this after the "Other Fees" calculator card -->
-<div class="calculator-card" id="agreementSection" style="display: none;">
-  <h3>Payment Terms Agreement and Conditions</h3>
-  
-  <div class="student-info-section">
-    <div class="fee-calculator">
-      <div class="fee-item">
-        <label for="studentName">Full Name:</label>
-        <input type="text" id="studentName" placeholder="Enter your full name">
-      </div>
-      <div class="fee-item">
-        <label for="studentId">Student ID Number:</label>
-        <input type="text" id="studentId" placeholder="Enter your student ID">
-      </div>
-      <div class="fee-item">
-        <label for="agreementDate">Date:</label>
-        <input type="date" id="agreementDate">
-      </div>
-    </div>
-  </div>
-
-  <div class="agreement-content">
-    <div class="terms-box">
-      <h4>COSTAATT Payment Terms and Conditions</h4>
-      <p><strong>Effective Date: October 1, 2025</strong></p>
-      
-      <ol>
-        <li><strong>Payment Obligation:</strong> I understand that I am responsible for paying all tuition and fees by the published deadlines.</li>
-        <li><strong>Late Fees:</strong> A late fee of $50 will be applied to all payments received after the official deadline.</li>
-        <li><strong>GATE Funding:</strong> I understand that GATE funding is subject to approval and may not cover all courses.</li>
-        <li><strong>Withdrawal Policy:</strong> Withdrawn and repeated courses are not covered by GATE and must be self-funded.</li>
-        <li><strong>Financial Hold:</strong> Failure to pay fees may result in a financial hold preventing registration and access to academic records.</li>
-        <li><strong>Payment Plan:</strong> Payment plans may be available upon request and require separate approval.</li>
-        <li><strong>Accuracy:</strong> I verify that the information provided in the fee calculator is accurate to the best of my knowledge.</li>
-      </ol>
-      
-      <p><strong>Declaration:</strong> By signing this agreement, I acknowledge that I have read, understood, and agree to abide by the above terms and conditions.</p>
-    </div>
-
-    <div class="signature-section">
-      <label for="signature">Electronic Signature:</label>
-      <div class="signature-pad-container">
-        <canvas id="signaturePad" width="400" height="150"></canvas>
-        <button type="button" class="btn-secondary" onclick="clearSignature()" style="margin-top: 10px;">
-          <span>🗑️</span> Clear Signature
-        </button>
-      </div>
-    </div>
-
-    <div class="agreement-controls">
-      <button class="btn-primary" onclick="generateAgreementPDF()">
-        <span>📄</span> Download Signed Agreement (PDF)
-      </button>
-      <button class="btn-secondary" onclick="downloadBlankAgreement()">
-        <span>📝</span> Download Blank Agreement
-      </button>
-      <button class="btn-accent" onclick="resetAgreement()">
-        <span>🔄</span> Reset Form
-      </button>
-    </div>
-  </div>
-</div>
-
     <div class="calculator-card">
       <div class="totals-section">
         <div>
@@ -363,7 +1272,7 @@
       </div>
     </div>
 
-   <div class="disclaimer">
+<div class="disclaimer">
   <h3>Legal Disclaimer</h3>
   <p>The calculations generated by this tool are <strong>estimates only</strong> and are based on the fee information you, the student, have entered from your Account Summary/Account Transactions.</p>
   <p>This Student Fee Calculator is provided<strong> for guidance purposes </strong>only and is intended to help you estimate the self-funded portion of your next payment.</strong>The calculated amounts are estimates and may not reflect your final balance.</p> 
@@ -383,12 +1292,455 @@
   </div>
 
   <script>
+
+// Global variables to store agreement data
+let agreementData = {
+    accepted: false,
+    studentName: '',
+    studentId: '',
+    agreementDate: '',
+    agreementTime: ''
+};
+
+// Show payment notice automatically when page loads
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        showPaymentNotice();
+    }, 1000);
+});
+
+function showPaymentNotice() {
+    document.getElementById('noticePopup').classList.add('show');
+    document.getElementById('noticeOverlay').classList.add('show');
+}
+
+function closePaymentNotice() {
+    document.getElementById('noticePopup').classList.remove('show');
+    document.getElementById('noticeOverlay').classList.remove('show');
+}
+
+function acceptAgreement() {
+    const studentName = document.getElementById('studentName').value.trim();
+    const studentId = document.getElementById('studentId').value.trim();
+
+    // Validate inputs
+    if (!studentName) {
+        alert('Please enter your full name.');
+        document.getElementById('studentName').focus();
+        return;
+    }
+
+    if (!studentId || !/^\d{8}$/.test(studentId)) {
+        alert('Please enter a valid 8-digit COSTAATT Student ID.');
+        document.getElementById('studentId').focus();
+        return;
+    }
+
+    // Store agreement data
+    const now = new Date();
+    agreementData = {
+        accepted: true,
+        studentName: studentName,
+        studentId: studentId,
+        agreementDate: now.toLocaleDateString('en-TT'),
+        agreementTime: now.toLocaleTimeString('en-TT')
+    };
+
+    // Update UI
+    document.getElementById('agreementDetails').textContent = 
+        `By: ${studentName} | ID: ${studentId} | Date: ${agreementData.agreementDate} at ${agreementData.agreementTime}`;
+    
+    document.getElementById('displayStudentName').textContent = studentName;
+    document.getElementById('displayStudentId').textContent = `ID: ${studentId}`;
+
+    // Show status and info displays
+    document.getElementById('agreementStatus').style.display = 'block';
+    document.getElementById('studentInfoDisplay').style.display = 'block';
+    document.getElementById('downloadSection').style.display = 'block';
+
+    // Close the modal
+    closePaymentNotice();
+
+    // Show success message
+    showTemporaryMessage('✅ Agreement accepted successfully! You can now use the fee calculator.', 'success');
+}
+
+function downloadFeeReport() {
+    if (!agreementData.accepted) {
+        alert('Please accept the agreement first.');
+        return;
+    }
+
+    // Get current fee calculations
+    const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
+    const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
+    const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
+    const grandTotal = document.getElementById('grandTotal').textContent;
+
+    // Create report content
+    const reportContent = `
+COSTAATT - STUDENT FEE CALCULATION REPORT
+===========================================
+
+STUDENT INFORMATION:
+-------------------
+Name: ${agreementData.studentName}
+Student ID: ${agreementData.studentId}
+Agreement Date: ${agreementData.agreementDate}
+Agreement Time: ${agreementData.agreementTime}
+
+FEE BREAKDOWN:
+--------------
+Tuition Fees: ${tuitionTotal}
+College Fees: ${collegeFeesTotal}
+Other Fees: ${otherFeesTotal}
+---------------------------------
+GRAND TOTAL: ${grandTotal}
+
+AGREEMENT CONFIRMATION:
+-----------------------
+I, ${agreementData.studentName} (ID: ${agreementData.studentId}), hereby confirm that:
+
+1. I have read, understood, and agree to abide by all COSTAATT payment terms and conditions
+2. I accept full financial responsibility for all tuition and fees
+3. I understand that GATE funding may not cover all courses
+4. I acknowledge the payment deadlines and consequences of late payment
+5. I agree to monitor my student account regularly
+
+This agreement was accepted on ${agreementData.agreementDate} at ${agreementData.agreementTime}.
+
+CALCULATOR DISCLAIMER:
+----------------------
+This report is generated for estimation purposes only. Final amounts must be verified with the Bursar's Office. All figures are in Trinidad and Tobago Dollars (TTD).
+
+Generated by COSTAATT Fee Calculator on ${new Date().toLocaleString('en-TT')}
+    `;
+
+    // Create and download file
+    const blob = new Blob([reportContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `COSTAATT_Fee_Report_${agreementData.studentId}_${new Date().getTime()}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+
+    // Show download confirmation
+    showTemporaryMessage('📥 Fee report downloaded successfully!', 'success');
+}
+// PDF Generation Functions
+function generatePDFReport() {
+    if (!agreementData.accepted) {
+        alert('Please accept the agreement first.');
+        return;
+    }
+
+    // Create PDF instance
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Set document properties
+    doc.setProperties({
+        title: `COSTAATT Fee Report - ${agreementData.studentName}`,
+        subject: 'Student Fee Calculation and Agreement',
+        author: 'COSTAATT Bursar Department',
+        keywords: 'fees, tuition, agreement, COSTAATT',
+        creator: 'COSTAATT Fee Calculator'
+    });
+
+    // Add content to PDF
+    addPDFContent(doc);
+    
+    // Generate filename
+    const filename = `COSTAATT_Fee_Report_${agreementData.studentId}_${new Date().getTime()}.pdf`;
+    
+    // Save PDF
+    doc.save(filename);
+    
+    // Show download confirmation
+    showTemporaryMessage('📥 PDF report downloaded successfully!', 'success');
+}
+
+function previewPDF() {
+    const previewContent = generatePDFPreviewContent();
+    document.getElementById('pdfPreviewContent').innerHTML = previewContent;
+    document.getElementById('pdfPreview').style.display = 'block';
+}
+
+function generatePDFPreviewContent() {
+    const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
+    const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
+    const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
+    const grandTotal = document.getElementById('grandTotal').textContent;
+
+    // Get course details
+    let courseDetails = '';
+    for (let i = 0; i < currentRowCount; i++) {
+        const row = document.getElementById('tableBody').rows[i];
+        if (row) {
+            const studentType = row.cells[0].querySelector('select').value;
+            const credits = row.cells[1].querySelector('select').value;
+            const courseDesc = document.getElementById(`courseDesc-${i}`).textContent;
+            const courseType = row.cells[3].querySelector('select').value;
+            const gateCoverage = row.cells[5].querySelector('select').value;
+            const courseTotal = document.getElementById(`total-${i}`).textContent;
+            
+            courseDetails += `
+                <div style="margin: 8px 0; padding: 8px; background: #f5f5f5; border-radius: 4px;">
+                    <strong>${courseDesc}</strong> | ${credits} Credit(s) | ${courseType}<br>
+                    Student Type: ${studentType} | GATE: ${gateCoverage} | Total: ${courseTotal}
+                </div>
+            `;
+        }
+    }
+
+    return `
+        <div class="pdf-header">
+            <h1 style="color: #6a0dad; margin: 0;">COSTAATT</h1>
+            <h2 style="margin: 5px 0; color: #333;">Student Fee Calculation Report</h2>
+            <p style="margin: 0; color: #666;">College of Science, Technology and Applied Arts of Trinidad and Tobago</p>
+        </div>
+
+        <div class="pdf-section">
+            <h3 style="color: #6a0dad; border-bottom: 2px solid #6a0dad; padding-bottom: 5px;">Student Information</h3>
+            <p><strong>Name:</strong> ${agreementData.studentName}</p>
+            <p><strong>Student ID:</strong> ${agreementData.studentId}</p>
+            <p><strong>Agreement Date:</strong> ${agreementData.agreementDate} at ${agreementData.agreementTime}</p>
+            <p><strong>Report Generated:</strong> ${new Date().toLocaleString('en-TT')}</p>
+        </div>
+
+        <div class="pdf-section">
+            <h3 style="color: #6a0dad; border-bottom: 2px solid #6a0dad; padding-bottom: 5px;">Course Details</h3>
+            ${courseDetails || '<p>No courses added to calculation.</p>'}
+        </div>
+
+        <div class="pdf-section pdf-totals">
+            <h3 style="color: #2e7d32; border-bottom: 2px solid #2e7d32; padding-bottom: 5px;">Fee Summary</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Tuition Fees:</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">${tuitionTotal}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>College Fees:</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">${collegeFeesTotal}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Other Fees:</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">${otherFeesTotal}</td>
+                </tr>
+                <tr style="font-size: 1.2em;">
+                    <td style="padding: 12px 8px; border-top: 2px solid #2e7d32;"><strong>GRAND TOTAL:</strong></td>
+                    <td style="padding: 12px 8px; border-top: 2px solid #2e7d32; text-align: right;"><strong>${grandTotal}</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="pdf-section pdf-agreement">
+            <h3 style="color: #e65100; border-bottom: 2px solid #e65100; padding-bottom: 5px;">Financial Responsibility Agreement</h3>
+            <p><strong>I, ${agreementData.studentName} (ID: ${agreementData.studentId}), hereby confirm that:</strong></p>
+            <ol style="padding-left: 20px;">
+                <li>I have read, understood, and agree to abide by all COSTAATT payment terms and conditions</li>
+                <li>I accept full financial responsibility for all tuition and fees associated with my enrollment</li>
+                <li>I understand that GATE funding may not cover withdrawn, repeated, or COMPASS courses</li>
+                <li>I acknowledge the payment deadlines and consequences of late payment</li>
+                <li>I agree to monitor my student account regularly throughout my time at the College</li>
+                <li>I understand that all financial obligations must be met before graduation</li>
+            </ol>
+            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 5px; border: 1px solid #ff9800;">
+                <p style="margin: 0; text-align: center;">
+                    <strong>Digital Signature</strong><br>
+                    ${agreementData.studentName}<br>
+                    <em>Accepted on ${agreementData.agreementDate} at ${agreementData.agreementTime}</em>
+                </p>
+            </div>
+        </div>
+
+        <div class="pdf-section">
+            <h3 style="color: #6a0dad; border-bottom: 2px solid #6a0dad; padding-bottom: 5px;">Payment Information</h3>
+            <p><strong>Payment Methods Accepted:</strong></p>
+            <ul>
+                <li>Personal Online Banking (FCB and RBL)</li>
+                <li>Inter-Bank Transfer (First Citizens Bank - Account: 1210236)</li>
+                <li>In-Person (LINX and Credit Card only - No cash)</li>
+                <li>COSTAATT ePay Service</li>
+            </ul>
+            <p><strong>Payment Submission:</strong> Email proof of payment to <strong>payments@costaatt.edu.tt</strong></p>
+        </div>
+
+        <div class="pdf-footer">
+            <p><strong>Disclaimer:</strong> This report is generated for estimation purposes only. Final amounts must be verified with the Bursar's Office. All figures are in Trinidad and Tobago Dollars (TTD).</p>
+            <p>Generated by COSTAATT Fee Calculator | ${new Date().toLocaleString('en-TT')}</p>
+        </div>
+    `;
+}
+
+function addPDFContent(doc) {
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 20;
+    let yPosition = 20;
+
+    // Add header
+    doc.setFontSize(20);
+    doc.setTextColor(106, 13, 173);
+    doc.text('COSTAATT', pageWidth / 2, yPosition, { align: 'center' });
+    
+    doc.setFontSize(16);
+    doc.setTextColor(0, 0, 0);
+    yPosition += 10;
+    doc.text('Student Fee Calculation Report', pageWidth / 2, yPosition, { align: 'center' });
+    
+    doc.setFontSize(10);
+    yPosition += 6;
+    doc.text('College of Science, Technology and Applied Arts of Trinidad and Tobago', pageWidth / 2, yPosition, { align: 'center' });
+    
+    yPosition += 20;
+
+    // Student Information Section
+    doc.setFontSize(14);
+    doc.setTextColor(106, 13, 173);
+    doc.text('STUDENT INFORMATION', margin, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Name: ${agreementData.studentName}`, margin, yPosition);
+    yPosition += 6;
+    doc.text(`Student ID: ${agreementData.studentId}`, margin, yPosition);
+    yPosition += 6;
+    doc.text(`Agreement Date: ${agreementData.agreementDate} at ${agreementData.agreementTime}`, margin, yPosition);
+    yPosition += 6;
+    doc.text(`Report Generated: ${new Date().toLocaleString('en-TT')}`, margin, yPosition);
+    yPosition += 15;
+
+    // Fee Summary Section
+    const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
+    const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
+    const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
+    const grandTotal = document.getElementById('grandTotal').textContent;
+
+    doc.setFontSize(14);
+    doc.setTextColor(46, 125, 50);
+    doc.text('FEE SUMMARY', margin, yPosition);
+    yPosition += 10;
+
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Tuition Fees: ${tuitionTotal}`, margin, yPosition);
+    yPosition += 6;
+    doc.text(`College Fees: ${collegeFeesTotal}`, margin, yPosition);
+    yPosition += 6;
+    doc.text(`Other Fees: ${otherFeesTotal}`, margin, yPosition);
+    yPosition += 8;
+    
+    doc.setFontSize(12);
+    doc.setFont(undefined, 'bold');
+    doc.text(`GRAND TOTAL: ${grandTotal}`, margin, yPosition);
+    doc.setFont(undefined, 'normal');
+    yPosition += 20;
+
+    // Agreement Section
+    doc.setFontSize(14);
+    doc.setTextColor(230, 81, 0);
+    doc.text('FINANCIAL RESPONSIBILITY AGREEMENT', margin, yPosition);
+    yPosition += 10;
+
+    doc.setFontSize(9);
+    doc.setTextColor(0, 0, 0);
+    const agreementText = [
+        `I, ${agreementData.studentName} (ID: ${agreementData.studentId}), hereby confirm that:`,
+        '1. I have read, understood, and agree to abide by all COSTAATT payment terms',
+        '2. I accept full financial responsibility for all tuition and fees',
+        '3. I understand GATE funding limitations for certain courses',
+        '4. I acknowledge payment deadlines and consequences',
+        '5. I agree to monitor my student account regularly',
+        '6. I understand financial obligations must be met before graduation'
+    ];
+
+    agreementText.forEach(line => {
+        if (yPosition > 270) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.text(line, margin, yPosition);
+        yPosition += 5;
+    });
+
+    yPosition += 10;
+    doc.text(`Digital Signature: ${agreementData.studentName}`, margin, yPosition);
+    yPosition += 5;
+    doc.text(`Accepted on: ${agreementData.agreementDate} at ${agreementData.agreementTime}`, margin, yPosition);
+    yPosition += 15;
+
+    // Disclaimer
+    doc.setFontSize(8);
+    doc.setTextColor(100, 100, 100);
+    const disclaimer = 'This report is for estimation purposes only. Final amounts must be verified with the Bursar\'s Office. All figures in TTD. Generated by COSTAATT Fee Calculator.';
+    
+    const splitDisclaimer = doc.splitTextToSize(disclaimer, pageWidth - 2 * margin);
+    doc.text(splitDisclaimer, pageWidth / 2, 280, { align: 'center' });
+}
+
+// Replace the existing downloadFeeReport function
+function downloadFeeReport() {
+    generatePDFReport();
+}
+function showTemporaryMessage(message, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.textContent = message;
+    messageDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#4CAF50' : '#ff9800'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        z-index: 1001;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    `;
+    
+    document.body.appendChild(messageDiv);
+    
+    setTimeout(() => {
+        messageDiv.style.opacity = '0';
+        messageDiv.style.transform = 'translateX(100px)';
+        setTimeout(() => {
+            document.body.removeChild(messageDiv);
+        }, 300);
+    }, 3000);
+}
+
+// Close popup when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closePaymentNotice();
+    }
+});
+
+// Update download section visibility when totals change
+function updateGrandTotal() {
+    const tuitionTotal = parseFloat(document.getElementById('displayTuitionTotal').textContent.replace('$', '')) || 0;
+    const collegeFeesTotal = parseFloat(document.getElementById('displayCollegeFeesTotal').textContent.replace('$', '')) || 0;
+    const otherFeesTotal = parseFloat(document.getElementById('displayOtherFeesTotal').textContent.replace('$', '')) || 0;
+    const grandTotal = tuitionTotal + collegeFeesTotal + otherFeesTotal;
+    document.getElementById('grandTotal').textContent = `$${grandTotal.toFixed(2)}`;
+    
+    // Show download section if agreement is accepted and there are fees
+    if (agreementData.accepted && grandTotal > 0) {
+        document.getElementById('downloadSection').style.display = 'block';
+    }
+}
      
     const studentTypes = ['Local National', 'Caricom National', 'International National'];
     const courseOptions = ['Compass Course', 'Undergraduate Course', 'Repeated Course'];
     const gradCourseOptions = ['Compass Course', 'Graduate Course', 'Repeated Course'];
-      const gateOptions = ['0%', '50%', '75%', '100%'];
-    const creditOptions = [1, 2, 3, 4];
+      const gateOptions = ['0%', '25%', '50%', '75%', '100%'];
+    const creditOptions = [1, 2, 3, 4, 5];
     
     // Tuition fees for undergraduate, graduate and short courses
     let tuitionFees = {
@@ -410,52 +1762,20 @@
     let lastSelectedGate = '0%';
     let currentCourseType = 'undergrad'; // 'undergrad', 'grad', or 'short'
 
-function switchCourseType(type) {
-  currentCourseType = type;
-  document.getElementById('undergradTab').classList.remove('active');
-  document.getElementById('gradTab').classList.remove('active');
-  document.getElementById(type + 'Tab').classList.add('active');
-  
-  // Update all rows with new course options and tuition fees
-  for (let i = 0; i < currentRowCount; i++) {
-    updateCourseOptions(i);
-    updateRow(i);
-  }
-  
-  // Update totals
-  updateTotalsSection();
-}
-
-function updateCourseOptions(index) {
-  const row = document.getElementById('tableBody').rows[index];
-  if (!row) return;
-
-  const courseSelect = row.cells[3].querySelector('select');
-  const currentValue = courseSelect.value;
-  
-  // Clear existing options
-  courseSelect.innerHTML = '';
-  
-  // Add new options based on current course type
-  const allowedCourseTypes = currentCourseType === 'undergrad' ? 
-    ['Compass Course','Undergraduate Course', 'Repeated Course'] : 
-    ['Postgraduate Course', 'Repeated Course'];
-  
-  allowedCourseTypes.forEach(course => {
-    const option = document.createElement('option');
-    option.value = course;
-    option.text = course;
-    
-    // Try to preserve the equivalent selection when switching
-    if ((currentValue === 'Undergraduate Course' && course === 'Graduate Course') ||
-        (currentValue === 'Graduate Course' && course === 'Undergraduate Course') ||
-        currentValue === course) {
-      option.selected = true;
+    function switchCourseType(type) {
+      currentCourseType = type;
+      document.getElementById('undergradTab').classList.remove('active');
+      document.getElementById('gradTab').classList.remove('active');
+          document.getElementById(type + 'Tab').classList.add('active');
+      
+      // Update all rows with new tuition fees
+      for (let i = 0; i < currentRowCount; i++) {
+        updateRow(i);
+      }
+      
+      // Update totals
+      updateTotalsSection();
     }
-    
-    courseSelect.appendChild(option);
-  });
-}
 
     function createRow(index) {
       if (currentRowCount >= maxRows) return;
@@ -579,450 +1899,6 @@ function updateCourseOptions(index) {
       }
     }
 
-// Add these variables with other global variables
-let signaturePad;
-let isAgreementActive = false;
-
-// Add to the switchCourseType function
-function switchCourseType(type) {
-  currentCourseType = type;
-  document.getElementById('undergradTab').classList.remove('active');
-  document.getElementById('gradTab').classList.remove('active');
-  document.getElementById('agreementTab').classList.remove('active');
-  document.getElementById(type + 'Tab').classList.add('active');
-  
-  // Hide all sections
-  document.querySelectorAll('.calculator-card').forEach(card => {
-    card.style.display = 'none';
-  });
-  
-  // Show relevant section
-  if (type === 'agreement') {
-    document.getElementById('agreementSection').style.display = 'block';
-    isAgreementActive = true;
-    initializeSignaturePad();
-  } else {
-    document.querySelectorAll('.calculator-card').forEach(card => {
-      if (card.id !== 'agreementSection') {
-        card.style.display = 'block';
-      }
-    });
-    isAgreementActive = false;
-  }
-  
-  // Update all rows with new course options and tuition fees
-  for (let i = 0; i < currentRowCount; i++) {
-    updateCourseOptions(i);
-    updateRow(i);
-  }
-  
-  // Update totals
-  updateTotalsSection();
-}
-
-// Add these new functions
-function initializeSignaturePad() {
-  const canvas = document.getElementById('signaturePad');
-  if (!canvas) return;
-  
-  // Set current date as default
-  document.getElementById('agreementDate').valueAsDate = new Date();
-  
-  // Initialize signature pad
-  signaturePad = new SignaturePad(canvas, {
-    backgroundColor: 'transparent',
-    penColor: 'rgb(0, 0, 0)'
-  });
-  
-  // Adjust canvas size for high DPI displays
-  const ratio = Math.max(window.devicePixelRatio || 1, 1);
-  canvas.width = canvas.offsetWidth * ratio;
-  canvas.height = canvas.offsetHeight * ratio;
-  canvas.getContext("2d").scale(ratio, ratio);
-  signaturePad.clear();
-}
-
-function clearSignature() {
-  if (signaturePad) {
-    signaturePad.clear();
-  }
-}
-
-function generateAgreementPDF() {
-  const studentName = document.getElementById('studentName').value;
-  const studentId = document.getElementById('studentId').value;
-  const agreementDate = document.getElementById('agreementDate').value;
-  
-  if (!studentName || !studentId || !agreementDate) {
-    alert('Please fill in all required fields: Name, Student ID, and Date.');
-    return;
-  }
-  
-  if (signaturePad.isEmpty()) {
-    alert('Please provide your electronic signature.');
-    return;
-  }
-  
-  // Create a temporary div to hold the PDF content
-  const pdfContent = document.createElement('div');
-  pdfContent.style.padding = '20px';
-  pdfContent.style.fontFamily = 'Arial, sans-serif';
-  
-  pdfContent.innerHTML = `
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h1 style="color: #6a0dad; margin-bottom: 10px;">COSTAATT</h1>
-      <h2 style="color: #333;">Payment Terms Agreement and Conditions</h2>
-    </div>
-    
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 15px;">
-      <p><strong>Student Name:</strong> ${studentName}</p>
-      <p><strong>Student ID:</strong> ${studentId}</p>
-      <p><strong>Date:</strong> ${new Date(agreementDate).toLocaleDateString()}</p>
-    </div>
-    
-    <div style="border: 1px solid #000; padding: 20px; margin: 20px 0;">
-      <h3 style="color: #6a0dad; text-align: center; margin-bottom: 15px;">Payment Terms and Conditions</h3>
-      <ol style="line-height: 1.6;">
-        <li style="margin-bottom: 10px;"><strong>Payment Obligation:</strong> I understand that I am responsible for paying all tuition and fees by the published deadlines.</li>
-        <li style="margin-bottom: 10px;"><strong>Late Fees:</strong> A late fee of $50 will be applied to all payments received after the official deadline.</li>
-        <li style="margin-bottom: 10px;"><strong>GATE Funding:</strong> I understand that GATE funding is subject to approval and may not cover all courses.</li>
-        <li style="margin-bottom: 10px;"><strong>Withdrawal Policy:</strong> Withdrawn and repeated courses are not covered by GATE and must be self-funded.</li>
-        <li style="margin-bottom: 10px;"><strong>Financial Hold:</strong> Failure to pay fees may result in a financial hold preventing registration and access to academic records.</li>
-        <li style="margin-bottom: 10px;"><strong>Payment Plan:</strong> Payment plans may be available upon request and require separate approval.</li>
-        <li style="margin-bottom: 10px;"><strong>Accuracy:</strong> I verify that the information provided in the fee calculator is accurate to the best of my knowledge.</li>
-      </ol>
-      
-      <p style="margin-top: 20px; font-weight: bold;">Declaration: By signing this agreement, I acknowledge that I have read, understood, and agree to abide by the above terms and conditions.</p>
-    </div>
-    
-    <div style="margin-top: 50px;">
-      <p><strong>Electronic Signature:</strong></p>
-      <div style="border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
-        <img src="${signaturePad.toDataURL()}" alt="Signature" style="max-width: 300px; height: 80px;">
-      </div>
-      <p>${studentName}</p>
-    </div>
-    
-    <div style="margin-top: 50px; font-size: 12px; color: #666; border-top: 1px solid #ccc; padding-top: 10px;">
-      <p>Generated on: ${new Date().toLocaleDateString()} | COSTAATT Bursar Department</p>
-    </div>
-  `;
-  
-  document.body.appendChild(pdfContent);
-  
-  // Use html2canvas and jsPDF to generate actual PDF
-  html2canvas(pdfContent).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-    const imgWidth = 210; // A4 width in mm
-    const pageHeight = 295; // A4 height in mm
-    const imgHeight = canvas.height * imgWidth / canvas.width;
-    let heightLeft = imgHeight;
-    
-    let position = 0;
-    
-    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-    heightLeft -= pageHeight;
-    
-    while (heightLeft >= 0) {
-      position = heightLeft - imgHeight;
-      pdf.addPage();
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-    }
-    
-    pdf.save(`COSTAATT-Agreement-${studentId}-${agreementDate}.pdf`);
-    document.body.removeChild(pdfContent);
-    alert('Agreement downloaded successfully as PDF!');
-  });
-}
-
-function downloadBlankAgreement() {
-  const pdfContent = document.createElement('div');
-  pdfContent.style.padding = '20px';
-  pdfContent.style.fontFamily = 'Arial, sans-serif';
-  
-  pdfContent.innerHTML = `
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h1 style="color: #6a0dad; margin-bottom: 10px;">COSTAATT</h1>
-      <h2 style="color: #333;">Payment Terms Agreement and Conditions</h2>
-    </div>
-    
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #000; padding-bottom: 15px;">
-      <p><strong>Student Name:</strong> ________________________________</p>
-      <p><strong>Student ID:</strong> ________________________________</p>
-      <p><strong>Date:</strong> ________________________________</p>
-    </div>
-    
-    <div style="border: 1px solid #000; padding: 20px; margin: 20px 0;">
-      <h3 style="color: #6a0dad; text-align: center; margin-bottom: 15px;">Payment Terms and Conditions</h3>
-      <ol style="line-height: 1.6;">
-        <li style="margin-bottom: 10px;"><strong>Payment Obligation:</strong> I understand that I am responsible for paying all tuition and fees by the published deadlines.</li>
-        <li style="margin-bottom: 10px;"><strong>Late Fees:</strong> A late fee of $50 will be applied to all payments received after the official deadline.</li>
-        <li style="margin-bottom: 10px;"><strong>GATE Funding:</strong> I understand that GATE funding is subject to approval and may not cover all courses.</li>
-        <li style="margin-bottom: 10px;"><strong>Withdrawal Policy:</strong> Withdrawn and repeated courses are not covered by GATE and must be self-funded.</li>
-        <li style="margin-bottom: 10px;"><strong>Financial Hold:</strong> Failure to pay fees may result in a financial hold preventing registration and access to academic records.</li>
-        <li style="margin-bottom: 10px;"><strong>Payment Plan:</strong> Payment plans may be available upon request and require separate approval.</li>
-        <li style="margin-bottom: 10px;"><strong>Accuracy:</strong> I verify that the information provided in the fee calculator is accurate to the best of my knowledge.</li>
-      </ol>
-      
-      <p style="margin-top: 20px; font-weight: bold;">Declaration: By signing this agreement, I acknowledge that I have read, understood, and agree to abide by the above terms and conditions.</p>
-    </div>
-    
-    <div style="margin-top: 50px;">
-      <p><strong>Signature:</strong></p>
-      <div style="border-bottom: 1px solid #000; padding-bottom: 50px; margin-bottom: 10px;"></div>
-    </div>
-    
-    <div style="margin-top: 50px; font-size: 12px; color: #666;">
-      <p>COSTAATT Bursar Department</p>
-    </div>
-  `;
-  
-  document.body.appendChild(pdfContent);
-  
-  html2canvas(pdfContent).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-    const imgWidth = 210;
-    const imgHeight = canvas.height * imgWidth / canvas.width;
-    
-    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-    pdf.save('COSTAATT-Blank-Agreement.pdf');
-    document.body.removeChild(pdfContent);
-  });
-}
-
-function downloadBlankAgreement() {
-  // Create a temporary div to hold the PDF content
-  const pdfContent = document.createElement('div');
-  pdfContent.style.padding = '20px';
-  pdfContent.style.fontFamily = 'Arial, sans-serif';
-  pdfContent.style.width = '210mm'; // A4 width
-  pdfContent.style.minHeight = '297mm'; // A4 height
-  
-  pdfContent.innerHTML = `
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h1 style="color: #6a0dad; margin-bottom: 10px;">COSTAATT</h1>
-      <h2 style="color: #333; margin-bottom: 20px;">Payment Terms Agreement and Conditions</h2>
-      <p style="color: #666; font-size: 14px;">Effective Date: October 1, 2025</p>
-    </div>
-    
-    <div style="margin-bottom: 25px; border-bottom: 2px solid #6a0dad; padding-bottom: 15px;">
-      <p style="margin: 8px 0; font-size: 16px;"><strong>Student Name:</strong> _________________________________________</p>
-      <p style="margin: 8px 0; font-size: 16px;"><strong>Student ID:</strong> _________________________________________</p>
-      <p style="margin: 8px 0; font-size: 16px;"><strong>Date:</strong> _________________________________________</p>
-    </div>
-    
-    <div style="border: 2px solid #6a0dad; padding: 25px; margin: 25px 0; border-radius: 8px;">
-      <h3 style="color: #6a0dad; text-align: center; margin-bottom: 20px; font-size: 18px;">COSTAATT Payment Terms and Conditions</h3>
-      
-      <ol style="line-height: 1.6; font-size: 14px; padding-left: 20px;">
-        <li style="margin-bottom: 12px;"><strong>Payment Obligation:</strong> I understand that I am responsible for paying all tuition and fees by the published deadlines.</li>
-        <li style="margin-bottom: 12px;"><strong>Late Fees:</strong> A late fee of $50 will be applied to all payments received after the official deadline.</li>
-        <li style="margin-bottom: 12px;"><strong>GATE Funding:</strong> I understand that GATE funding is subject to approval and may not cover all courses.</li>
-        <li style="margin-bottom: 12px;"><strong>Withdrawal Policy:</strong> Withdrawn and repeated courses are not covered by GATE and must be self-funded.</li>
-        <li style="margin-bottom: 12px;"><strong>Financial Hold:</strong> Failure to pay fees may result in a financial hold preventing registration and access to academic records.</li>
-        <li style="margin-bottom: 12px;"><strong>Payment Plan:</strong> Payment plans may be available upon request and require separate approval.</li>
-        <li style="margin-bottom: 12px;"><strong>Accuracy:</strong> I verify that the information provided in the fee calculator is accurate to the best of my knowledge.</li>
-      </ol>
-      
-      <div style="margin-top: 25px; padding: 15px; background-color: #f8f4ff; border-radius: 5px;">
-        <p style="font-weight: bold; margin: 0; font-size: 14px;">Declaration: By signing this agreement, I acknowledge that I have read, understood, and agree to abide by the above terms and conditions.</p>
-      </div>
-    </div>
-    
-    <div style="margin-top: 50px;">
-      <p style="font-size: 16px; margin-bottom: 10px;"><strong>Student Signature:</strong></p>
-      <div style="border-bottom: 2px solid #000; padding-bottom: 60px; margin-bottom: 15px;"></div>
-      <p style="font-size: 14px; color: #666;">Printed Name: _________________________________________</p>
-    </div>
-    
-    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc;">
-      <p style="font-size: 16px; margin-bottom: 10px;"><strong>College Representative Signature:</strong></p>
-      <div style="border-bottom: 2px solid #000; padding-bottom: 60px; margin-bottom: 15px;"></div>
-      <p style="font-size: 14px; color: #666;">Printed Name: _________________________________________</p>
-    </div>
-    
-    <div style="margin-top: 50px; font-size: 12px; color: #666; text-align: center;">
-      <p>COSTAATT Bursar Department | Generated on: ${new Date().toLocaleDateString()}</p>
-    </div>
-  `;
-  
-  document.body.appendChild(pdfContent);
-  
-  // Use html2canvas and jsPDF to generate actual PDF
-  html2canvas(pdfContent, {
-    scale: 2, // Higher quality
-    useCORS: true,
-    logging: false
-  }).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-    const imgWidth = 210; // A4 width in mm
-    const imgHeight = canvas.height * imgWidth / canvas.width;
-    
-    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-    pdf.save('COSTAATT-Blank-Payment-Agreement.pdf');
-    
-    // Clean up
-    document.body.removeChild(pdfContent);
-    
-    alert('Blank agreement downloaded successfully as PDF!');
-  }).catch(error => {
-    console.error('Error generating PDF:', error);
-    document.body.removeChild(pdfContent);
-    alert('Error generating PDF. Please try again.');
-  });
-}
-
-
-function resetAgreement() {
-  document.getElementById('studentName').value = '';
-  document.getElementById('studentId').value = '';
-  document.getElementById('agreementDate').valueAsDate = new Date();
-  clearSignature();
-}
-
-function downloadCalculatorResults() {
-  const studentName = prompt("Enter your full name for the report:");
-  const studentId = prompt("Enter your student ID number:");
-  
-  if (!studentName || !studentId) {
-    alert("Name and Student ID are required to generate the report.");
-    return;
-  }
-
-  // Get current date and time
-  const now = new Date();
-  const generatedDateTime = now.toLocaleString();
-
-  // Get all the calculated totals
-  const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
-  const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
-  const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
-  const grandTotal = document.getElementById('grandTotal').textContent;
-
-  // Get college fees breakdown
-  const registrationFee = document.getElementById('registrationFee').value;
-  const lateFee = document.getElementById('lateFee').value;
-  const otherFees = document.getElementById('otherFees').value;
-
-  // Count number of courses
-  const courseCount = currentRowCount;
-
-  // Get course type
-  const courseType = currentCourseType === 'undergrad' ? 'Undergraduate' : 'Postgraduate';
-
-  // Create PDF content
-  const pdfContent = document.createElement('div');
-  pdfContent.style.padding = '20px';
-  pdfContent.style.fontFamily = 'Arial, sans-serif';
-  pdfContent.style.backgroundColor = 'white';
-  pdfContent.style.color = 'black';
-
-  pdfContent.innerHTML = `
-    <div style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #6a0dad; padding-bottom: 20px;">
-      <h1 style="color: #6a0dad; margin-bottom: 10px;">COSTAATT</h1>
-      <h2 style="color: #333; margin-bottom: 15px;">Fee Calculator Results</h2>
-      <p style="color: #666;">Generated by COSTAATT Bursar Department</p>
-    </div>
-    
-    <div style="margin-bottom: 25px;">
-      <h3 style="color: #6a0dad; margin-bottom: 15px;">Student Information</h3>
-      <table style="width: 100%; border-collapse: collapse;">
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Student Name:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${studentName}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Student ID:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${studentId}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Course Type:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${courseType}</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Generated On:</strong></td>
-          <td style="padding: 8px; border-bottom: 1px solid #ddd;">${generatedDateTime}</td>
-        </tr>
-      </table>
-    </div>
-
-    <div style="margin-bottom: 25px;">
-      <h3 style="color: #6a0dad; margin-bottom: 15px;">Fee Breakdown</h3>
-      <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9;">
-        <tr>
-          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Number of Courses:</strong></td>
-          <td style="padding: 10px; border: 1px solid #ddd;">${courseCount}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Tuition Fees Total:</strong></td>
-          <td style="padding: 10px; border: 1px solid #ddd;">${tuitionTotal}</td>
-        </tr>
-        <tr style="background-color: #f0f0f0;">
-          <td style="padding: 10px; border: 1px solid #ddd;"><strong>College Fees Breakdown:</strong></td>
-          <td style="padding: 10px; border: 1px solid #ddd;">
-            Registration: $${registrationFee}<br>
-            Late Fee: $${lateFee}<br>
-            <strong>Total College Fees: ${collegeFeesTotal}</strong>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 10px; border: 1px solid #ddd;"><strong>Other Fees:</strong></td>
-          <td style="padding: 10px; border: 1px solid #ddd;">${otherFeesTotal}</td>
-        </tr>
-        <tr style="background-color: #e8f4f8; font-size: 18px;">
-          <td style="padding: 15px; border: 2px solid #6a0dad;"><strong>GRAND TOTAL:</strong></td>
-          <td style="padding: 15px; border: 2px solid #6a0dad; font-weight: bold;">${grandTotal}</td>
-        </tr>
-      </table>
-    </div>
-
-    <div style="margin-bottom: 20px; padding: 15px; background-color: #f8f4ff; border-radius: 5px;">
-      <h4 style="color: #6a0dad; margin-bottom: 10px;">Important Notes:</h4>
-      <ul style="margin: 0; padding-left: 20px;">
-        <li>This is an estimate only and not an official invoice</li>
-        <li>Final amounts must be confirmed with the Bursar Department</li>
-        <li>GATE funding subject to Ministry of Education approval</li>
-        <li>Late fees apply after official deadline (October 1, 2025)</li>
-      </ul>
-    </div>
-
-    <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #ccc; text-align: center; color: #666; font-size: 12px;">
-      <p>COSTAATT Bursar Department | ${generatedDateTime} | This document was auto-generated</p>
-    </div>
-  `;
-
-  // Add to document temporarily
-  document.body.appendChild(pdfContent);
-
-  // Generate PDF
-  html2canvas(pdfContent, {
-    scale: 2,
-    useCORS: true,
-    logging: false
-  }).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-    const imgWidth = 210;
-    const imgHeight = canvas.height * imgWidth / canvas.width;
-
-    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-    pdf.save(`COSTAATT-Fee-Calculator-${studentId}-${now.getTime()}.pdf`);
-    
-    // Clean up
-    document.body.removeChild(pdfContent);
-    
-    alert('Calculator results downloaded successfully as PDF!');
-  }).catch(error => {
-    console.error('Error generating PDF:', error);
-    document.body.removeChild(pdfContent);
-    alert('Error generating PDF. Please try again.');
-  });
-}
-
     function updateRow(index) {
       const row = document.getElementById('tableBody').rows[index];
       if (!row) return;
@@ -1066,12 +1942,13 @@ function downloadCalculatorResults() {
       }
 
       const gateVal = gateSelect.value;
-     const gateMap = {
-  '0%': 1,
-  '50%': 0.5,
-  '75%': 0.25,
-  '100%': 0
-};
+      const gateMap = {
+        '0%': 1,
+        '25%': 0.75,
+        '50%': 0.5,
+        '75%': 0.25,
+        '100%': 0
+      };
       const gateMultiplier = (isLocalNational && isUndergradCourse && !isCompassOrRepeated) ? gateMap[gateVal] : 1;
 
       const total = credits * tuitionFee * gateMultiplier;
