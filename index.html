@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> COSTAATT| COSTAATT Bursar Department</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     :root {
       --primary-color: #6a0dad;
@@ -388,16 +386,6 @@
       margin-bottom: 10px;
     }
 
-    .course-type-tabs {
-      display: flex;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #e0e0e0;
-    }
-
-    .dark-mode .course-type-tabs {
-      border-bottom-color: #3a4558;
-    }
-
 .notice-tab {
   background-color: #ffeb3b !important;
   color: #333 !important;
@@ -575,150 +563,6 @@
   border-left-color: #e68900;
 }
 
-.agreement-footer {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 2px solid #e0e0e0;
-  text-align: center;
-}
-
-.dark-mode .agreement-footer {
-  border-top-color: #3a4558;
-}
-
-.agree-btn {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  color: white;
-  border: none;
-  padding: 15px 40px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-}
-
-.agree-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-  background: linear-gradient(135deg, #45a049, #4CAF50);
-}
-
-.student-info-form {
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 10px;
-  margin: 20px 0;
-  border-left: 4px solid var(--primary-color);
-}
-
-.dark-mode .student-info-form {
-  background: #2a1b3d;
-  border-left-color: var(--secondary-color);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.dark-mode .form-group label {
-  color: var(--secondary-color);
-}
-
-.form-group input {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: var(--transition);
-}
-
-.dark-mode .form-group input {
-  background: var(--dark-card);
-  border-color: #3a4558;
-  color: var(--dark-text);
-}
-
-.form-group input:focus {
-  border-color: var(--primary-color);
-  outline: none;
-  box-shadow: 0 0 8px rgba(106, 13, 173, 0.3);
-}
-
-.agreement-status {
-  background: linear-gradient(135deg, #e8f5e8, #d4edda);
-  padding: 15px;
-  border-radius: 8px;
-  margin: 15px 0;
-  border-left: 4px solid #28a745;
-  display: none;
-}
-
-.dark-mode .agreement-status {
-  background: linear-gradient(135deg, #1a331a, #155724);
-  border-left-color: #20c997;
-}
-
-.download-section {
-  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
-  border-left: 4px solid #2196F3;
-  display: none;
-}
-
-.dark-mode .download-section {
-  background: linear-gradient(135deg, #1a237e, #283593);
-  border-left-color: #2196F3;
-}
-
-.download-btn {
-  background: linear-gradient(135deg, #2196F3, #1976D2);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto;
-}
-
-.download-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
-  background: linear-gradient(135deg, #1976D2, #1565C0);
-}
-
-.student-info-display {
-  background: #fff3cd;
-  padding: 15px;
-  border-radius: 8px;
-  margin: 15px 0;
-  border: 2px solid #ffc107;
-  display: none;
-}
-
-.dark-mode .student-info-display {
-  background: #332b1a;
-  border-color: #e68900;
-}
-
 @media (max-width: 768px) {
   .notice-popup {
     padding: 20px;
@@ -728,112 +572,17 @@
   .notice-content {
     font-size: 13px;
   }
-  
-  .agree-btn {
-    padding: 12px 30px;
-    font-size: 14px;
-  }
-}
-.pdf-download-btn {
-  background: linear-gradient(135deg, #d32f2f, #b71c1c);
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 10px;
 }
 
-.pdf-download-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
-  background: linear-gradient(135deg, #b71c1c, #c62828);
-}
+    .course-type-tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+    }
 
-.pdf-preview {
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 15px 0;
-  max-height: 300px;
-  overflow-y: auto;
-  display: none;
-}
-
-.dark-mode .pdf-preview {
-  background: var(--dark-card);
-  border-color: #3a4558;
-}
-
-.pdf-preview-content {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.4;
-}
-
-.pdf-header {
-  text-align: center;
-  border-bottom: 3px solid #6a0dad;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-}
-
-.pdf-section {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background: #f9f9f9;
-}
-
-.dark-mode .pdf-section {
-  background: #2a1b3d;
-  border-color: #3a4558;
-}
-
-.pdf-totals {
-  background: #e8f5e8 !important;
-  border-left: 4px solid #4caf50 !important;
-}
-
-.dark-mode .pdf-totals {
-  background: #1a331a !important;
-  border-left-color: #4caf50 !important;
-}
-
-.pdf-agreement {
-  background: #fff3cd !important;
-  border-left: 4px solid #ff9800 !important;
-}
-
-.dark-mode .pdf-agreement {
-  background: #332b1a !important;
-  border-left-color: #ff9800 !important;
-}
-
-.pdf-footer {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 2px dashed #ccc;
-  font-size: 12px;
-  color: #666;
-}
-
-.download-options {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 15px;
-}
+    .dark-mode .course-type-tabs {
+      border-bottom-color: #3a4558;
+    }
 
     .course-type-tab {
       padding: 12px 24px;
@@ -917,7 +666,7 @@
       <span>📝</span> Show Instructions
     </button>
 
-    <div class="instructions" id="instructions">
+   <div class="instructions" id="instructions">
   <strong style="font-size: 16px;">📝 Instructions:</strong><br><br>
   
   <div style="display: flex; align-items: flex-start; margin-bottom: 10px;">
@@ -955,52 +704,19 @@
     <span>Click <span class="highlight">Reset Table</span> to clear your entries and start over.</span>
   </div>
 </div>
+<style>
+.highlight {
+  background-color: #ede7f6;
+  font-weight: bold;
+  padding: 2px 5px;
+}
+</style>
 
-<div class="course-type-tabs">
+    <div class="course-type-tabs">
   <div class="course-type-tab active" id="undergradTab" onclick="switchCourseType('undergrad')">Undergraduate Courses</div>
   <div class="course-type-tab" id="gradTab" onclick="switchCourseType('grad')">Postgraduate Courses</div>
   <div class="course-type-tab notice-tab" onclick="showPaymentNotice()">
-    <span>📄</span> View Terms
-  </div>
-</div>
-
-<!-- Agreement Status Display -->
-<div class="agreement-status" id="agreementStatus">
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <span style="font-size: 24px;">✅</span>
-    <div>
-      <strong>Financial Responsibility Agreement Accepted</strong><br>
-      <span id="agreementDetails">By: [Student Name] | ID: [Student ID] | Date: [Agreement Date]</span>
-    </div>
-  </div>
-</div>
-
-<!-- Student Info Display -->
-<div class="student-info-display" id="studentInfoDisplay">
-  <strong>Student Information:</strong><br>
-  <span id="displayStudentName"></span> | <span id="displayStudentId"></span>
-</div>
-
-<!-- Download Section -->
-<div class="download-section" id="downloadSection">
-  <div style="text-align: center;">
-    <h4 style="margin-bottom: 15px; color: #1976D2;">📊 Download Your Fee Calculation</h4>
-    <p style="margin-bottom: 20px;">Download a professional PDF report of your fees including your agreement to the financial terms.</p>
-    
-    <div class="download-options">
-      <button class="download-btn" onclick="generatePDFReport()">
-        </span> Download PDF Report
-      </button>
-      <button class="pdf-download-btn" onclick="previewPDF()">
-        </span> Preview PDF
-      </button>
-    </div>
-    
-    <div class="pdf-preview" id="pdfPreview">
-      <div class="pdf-preview-content" id="pdfPreviewContent">
-        <!-- PDF content will be generated here -->
-      </div>
-    </div>
+    <span>⚠️</span> Payment Terms Notice
   </div>
 </div>
 
@@ -1017,7 +733,6 @@
       COSTAATT offers training programmes that are both GATE-funded and non-GATE-funded. Regardless of funding status, all students are financially responsible for the full and timely payment of tuition, college fees, and any other applicable fees, in accordance with the deadlines outlined in the Academic Calendar.
     </div>
 
-    <!-- Your document content remains exactly the same -->
     <h3>1. GATE Funding and Student Responsibility</h3>
     <ul>
       <li>Students may be eligible for 100%, 75%, or 50% GATE funding, depending on the programme and their GATE status.</li>
@@ -1144,26 +859,6 @@
         <li>I accept that all financial obligations must be met before I can graduate or access any official College documentation.</li>
       </ol>
     </div>
-
-    <!-- Student Information Form -->
-    <div class="student-info-form" id="studentInfoForm">
-      <h4 style="text-align: center; margin-bottom: 20px;">🎓 Student Information</h4>
-      <div class="form-group">
-        <label for="studentName">Full Name (as registered):</label>
-        <input type="text" id="studentName" placeholder="Enter your full name" required>
-      </div>
-      <div class="form-group">
-        <label for="studentId">COSTAATT Student ID Number:</label>
-        <input type="text" id="studentId" placeholder="Enter your 8-digit student ID" pattern="[0-9]{8}" required>
-      </div>
-    </div>
-
-    <div class="agreement-footer">
-      <p style="margin-bottom: 20px; font-weight: bold;">By clicking "I Agree", you acknowledge that you have read, understood, and accept all the terms and conditions outlined above.</p>
-      <button class="agree-btn" onclick="acceptAgreement()">
-        ✅ I Agree to the Terms & Conditions
-      </button>
-    </div>
   </div>
 </div>
 
@@ -1284,457 +979,32 @@
     <li>GATE funding: Confirmed rates are determined by the Ministry of Education Funding and Grant Division and are subject to their review and approval.</li>
     <li>Final tuition and fees must <strong>be confirmed with the College's Bursar Department.</strong></li>
   </ol>
-  
-  <p style="font-weight:bold; border-top:1px solid #ccc; padding-top:10px;">
-  This tool does not constitute professional financial advice under the Financial Institutions Act, Chap. 79:09 of Trinidad and Tobago.
-  </p>
+
+      
+      <p style="font-weight:bold; border-top:1px solid #ccc; padding-top:10px;">
+      This tool does not constitute professional financial advice under the Financial Institutions Act, Chap. 79:09 of Trinidad and Tobago.
+      </p>
     </div>
   </div>
 
   <script>
 
-// Global variables to store agreement data
-let agreementData = {
-    accepted: false,
-    studentName: '',
-    studentId: '',
-    agreementDate: '',
-    agreementTime: ''
-};
-
-// Show payment notice automatically when page loads
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        showPaymentNotice();
-    }, 1000);
-});
-
 function showPaymentNotice() {
-    document.getElementById('noticePopup').classList.add('show');
-    document.getElementById('noticeOverlay').classList.add('show');
+  document.getElementById('noticePopup').classList.add('show');
+  document.getElementById('noticeOverlay').classList.add('show');
 }
 
 function closePaymentNotice() {
-    document.getElementById('noticePopup').classList.remove('show');
-    document.getElementById('noticeOverlay').classList.remove('show');
-}
-
-function acceptAgreement() {
-    const studentName = document.getElementById('studentName').value.trim();
-    const studentId = document.getElementById('studentId').value.trim();
-
-    // Validate inputs
-    if (!studentName) {
-        alert('Please enter your full name.');
-        document.getElementById('studentName').focus();
-        return;
-    }
-
-    if (!studentId || !/^\d{8}$/.test(studentId)) {
-        alert('Please enter a valid 8-digit COSTAATT Student ID.');
-        document.getElementById('studentId').focus();
-        return;
-    }
-
-    // Store agreement data
-    const now = new Date();
-    agreementData = {
-        accepted: true,
-        studentName: studentName,
-        studentId: studentId,
-        agreementDate: now.toLocaleDateString('en-TT'),
-        agreementTime: now.toLocaleTimeString('en-TT')
-    };
-
-    // Update UI
-    document.getElementById('agreementDetails').textContent = 
-        `By: ${studentName} | ID: ${studentId} | Date: ${agreementData.agreementDate} at ${agreementData.agreementTime}`;
-    
-    document.getElementById('displayStudentName').textContent = studentName;
-    document.getElementById('displayStudentId').textContent = `ID: ${studentId}`;
-
-    // Show status and info displays
-    document.getElementById('agreementStatus').style.display = 'block';
-    document.getElementById('studentInfoDisplay').style.display = 'block';
-    document.getElementById('downloadSection').style.display = 'block';
-
-    // Close the modal
-    closePaymentNotice();
-
-    // Show success message
-    showTemporaryMessage('✅ Agreement accepted successfully! You can now use the fee calculator.', 'success');
-}
-
-function downloadFeeReport() {
-    if (!agreementData.accepted) {
-        alert('Please accept the agreement first.');
-        return;
-    }
-
-    // Get current fee calculations
-    const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
-    const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
-    const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
-    const grandTotal = document.getElementById('grandTotal').textContent;
-
-    // Create report content
-    const reportContent = `
-COSTAATT - STUDENT FEE CALCULATION REPORT
-===========================================
-
-STUDENT INFORMATION:
--------------------
-Name: ${agreementData.studentName}
-Student ID: ${agreementData.studentId}
-Agreement Date: ${agreementData.agreementDate}
-Agreement Time: ${agreementData.agreementTime}
-
-FEE BREAKDOWN:
---------------
-Tuition Fees: ${tuitionTotal}
-College Fees: ${collegeFeesTotal}
-Other Fees: ${otherFeesTotal}
----------------------------------
-GRAND TOTAL: ${grandTotal}
-
-AGREEMENT CONFIRMATION:
------------------------
-I, ${agreementData.studentName} (ID: ${agreementData.studentId}), hereby confirm that:
-
-1. I have read, understood, and agree to abide by all COSTAATT payment terms and conditions
-2. I accept full financial responsibility for all tuition and fees
-3. I understand that GATE funding may not cover all courses
-4. I acknowledge the payment deadlines and consequences of late payment
-5. I agree to monitor my student account regularly
-
-This agreement was accepted on ${agreementData.agreementDate} at ${agreementData.agreementTime}.
-
-CALCULATOR DISCLAIMER:
-----------------------
-This report is generated for estimation purposes only. Final amounts must be verified with the Bursar's Office. All figures are in Trinidad and Tobago Dollars (TTD).
-
-Generated by COSTAATT Fee Calculator on ${new Date().toLocaleString('en-TT')}
-    `;
-
-    // Create and download file
-    const blob = new Blob([reportContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `COSTAATT_Fee_Report_${agreementData.studentId}_${new Date().getTime()}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
-
-    // Show download confirmation
-    showTemporaryMessage('📥 Fee report downloaded successfully!', 'success');
-}
-// PDF Generation Functions
-function generatePDFReport() {
-    if (!agreementData.accepted) {
-        alert('Please accept the agreement first.');
-        return;
-    }
-
-    // Create PDF instance
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    
-    // Set document properties
-    doc.setProperties({
-        title: `COSTAATT Fee Report - ${agreementData.studentName}`,
-        subject: 'Student Fee Calculation and Agreement',
-        author: 'COSTAATT Bursar Department',
-        keywords: 'fees, tuition, agreement, COSTAATT',
-        creator: 'COSTAATT Fee Calculator'
-    });
-
-    // Add content to PDF
-    addPDFContent(doc);
-    
-    // Generate filename
-    const filename = `COSTAATT_Fee_Report_${agreementData.studentId}_${new Date().getTime()}.pdf`;
-    
-    // Save PDF
-    doc.save(filename);
-    
-    // Show download confirmation
-    showTemporaryMessage('📥 PDF report downloaded successfully!', 'success');
-}
-
-function previewPDF() {
-    const previewContent = generatePDFPreviewContent();
-    document.getElementById('pdfPreviewContent').innerHTML = previewContent;
-    document.getElementById('pdfPreview').style.display = 'block';
-}
-
-function generatePDFPreviewContent() {
-    const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
-    const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
-    const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
-    const grandTotal = document.getElementById('grandTotal').textContent;
-
-    // Get course details
-    let courseDetails = '';
-    for (let i = 0; i < currentRowCount; i++) {
-        const row = document.getElementById('tableBody').rows[i];
-        if (row) {
-            const studentType = row.cells[0].querySelector('select').value;
-            const credits = row.cells[1].querySelector('select').value;
-            const courseDesc = document.getElementById(`courseDesc-${i}`).textContent;
-            const courseType = row.cells[3].querySelector('select').value;
-            const gateCoverage = row.cells[5].querySelector('select').value;
-            const courseTotal = document.getElementById(`total-${i}`).textContent;
-            
-            courseDetails += `
-                <div style="margin: 8px 0; padding: 8px; background: #f5f5f5; border-radius: 4px;">
-                    <strong>${courseDesc}</strong> | ${credits} Credit(s) | ${courseType}<br>
-                    Student Type: ${studentType} | GATE: ${gateCoverage} | Total: ${courseTotal}
-                </div>
-            `;
-        }
-    }
-
-    return `
-        <div class="pdf-header">
-            <h1 style="color: #6a0dad; margin: 0;">COSTAATT</h1>
-            <h2 style="margin: 5px 0; color: #333;">Student Fee Calculation Report</h2>
-            <p style="margin: 0; color: #666;">College of Science, Technology and Applied Arts of Trinidad and Tobago</p>
-        </div>
-
-        <div class="pdf-section">
-            <h3 style="color: #6a0dad; border-bottom: 2px solid #6a0dad; padding-bottom: 5px;">Student Information</h3>
-            <p><strong>Name:</strong> ${agreementData.studentName}</p>
-            <p><strong>Student ID:</strong> ${agreementData.studentId}</p>
-            <p><strong>Agreement Date:</strong> ${agreementData.agreementDate} at ${agreementData.agreementTime}</p>
-            <p><strong>Report Generated:</strong> ${new Date().toLocaleString('en-TT')}</p>
-        </div>
-
-        <div class="pdf-section">
-            <h3 style="color: #6a0dad; border-bottom: 2px solid #6a0dad; padding-bottom: 5px;">Course Details</h3>
-            ${courseDetails || '<p>No courses added to calculation.</p>'}
-        </div>
-
-        <div class="pdf-section pdf-totals">
-            <h3 style="color: #2e7d32; border-bottom: 2px solid #2e7d32; padding-bottom: 5px;">Fee Summary</h3>
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Tuition Fees:</strong></td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">${tuitionTotal}</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>College Fees:</strong></td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">${collegeFeesTotal}</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px; border-bottom: 1px solid #ccc;"><strong>Other Fees:</strong></td>
-                    <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">${otherFeesTotal}</td>
-                </tr>
-                <tr style="font-size: 1.2em;">
-                    <td style="padding: 12px 8px; border-top: 2px solid #2e7d32;"><strong>GRAND TOTAL:</strong></td>
-                    <td style="padding: 12px 8px; border-top: 2px solid #2e7d32; text-align: right;"><strong>${grandTotal}</strong></td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="pdf-section pdf-agreement">
-            <h3 style="color: #e65100; border-bottom: 2px solid #e65100; padding-bottom: 5px;">Financial Responsibility Agreement</h3>
-            <p><strong>I, ${agreementData.studentName} (ID: ${agreementData.studentId}), hereby confirm that:</strong></p>
-            <ol style="padding-left: 20px;">
-                <li>I have read, understood, and agree to abide by all COSTAATT payment terms and conditions</li>
-                <li>I accept full financial responsibility for all tuition and fees associated with my enrollment</li>
-                <li>I understand that GATE funding may not cover withdrawn, repeated, or COMPASS courses</li>
-                <li>I acknowledge the payment deadlines and consequences of late payment</li>
-                <li>I agree to monitor my student account regularly throughout my time at the College</li>
-                <li>I understand that all financial obligations must be met before graduation</li>
-            </ol>
-            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 5px; border: 1px solid #ff9800;">
-                <p style="margin: 0; text-align: center;">
-                    <strong>Digital Signature</strong><br>
-                    ${agreementData.studentName}<br>
-                    <em>Accepted on ${agreementData.agreementDate} at ${agreementData.agreementTime}</em>
-                </p>
-            </div>
-        </div>
-
-        <div class="pdf-section">
-            <h3 style="color: #6a0dad; border-bottom: 2px solid #6a0dad; padding-bottom: 5px;">Payment Information</h3>
-            <p><strong>Payment Methods Accepted:</strong></p>
-            <ul>
-                <li>Personal Online Banking (FCB and RBL)</li>
-                <li>Inter-Bank Transfer (First Citizens Bank - Account: 1210236)</li>
-                <li>In-Person (LINX and Credit Card only - No cash)</li>
-                <li>COSTAATT ePay Service</li>
-            </ul>
-            <p><strong>Payment Submission:</strong> Email proof of payment to <strong>payments@costaatt.edu.tt</strong></p>
-        </div>
-
-        <div class="pdf-footer">
-            <p><strong>Disclaimer:</strong> This report is generated for estimation purposes only. Final amounts must be verified with the Bursar's Office. All figures are in Trinidad and Tobago Dollars (TTD).</p>
-            <p>Generated by COSTAATT Fee Calculator | ${new Date().toLocaleString('en-TT')}</p>
-        </div>
-    `;
-}
-
-function addPDFContent(doc) {
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const margin = 20;
-    let yPosition = 20;
-
-    // Add header
-    doc.setFontSize(20);
-    doc.setTextColor(106, 13, 173);
-    doc.text('COSTAATT', pageWidth / 2, yPosition, { align: 'center' });
-    
-    doc.setFontSize(16);
-    doc.setTextColor(0, 0, 0);
-    yPosition += 10;
-    doc.text('Student Fee Calculation Report', pageWidth / 2, yPosition, { align: 'center' });
-    
-    doc.setFontSize(10);
-    yPosition += 6;
-    doc.text('College of Science, Technology and Applied Arts of Trinidad and Tobago', pageWidth / 2, yPosition, { align: 'center' });
-    
-    yPosition += 20;
-
-    // Student Information Section
-    doc.setFontSize(14);
-    doc.setTextColor(106, 13, 173);
-    doc.text('STUDENT INFORMATION', margin, yPosition);
-    yPosition += 10;
-    
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    doc.text(`Name: ${agreementData.studentName}`, margin, yPosition);
-    yPosition += 6;
-    doc.text(`Student ID: ${agreementData.studentId}`, margin, yPosition);
-    yPosition += 6;
-    doc.text(`Agreement Date: ${agreementData.agreementDate} at ${agreementData.agreementTime}`, margin, yPosition);
-    yPosition += 6;
-    doc.text(`Report Generated: ${new Date().toLocaleString('en-TT')}`, margin, yPosition);
-    yPosition += 15;
-
-    // Fee Summary Section
-    const tuitionTotal = document.getElementById('displayTuitionTotal').textContent;
-    const collegeFeesTotal = document.getElementById('displayCollegeFeesTotal').textContent;
-    const otherFeesTotal = document.getElementById('displayOtherFeesTotal').textContent;
-    const grandTotal = document.getElementById('grandTotal').textContent;
-
-    doc.setFontSize(14);
-    doc.setTextColor(46, 125, 50);
-    doc.text('FEE SUMMARY', margin, yPosition);
-    yPosition += 10;
-
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    doc.text(`Tuition Fees: ${tuitionTotal}`, margin, yPosition);
-    yPosition += 6;
-    doc.text(`College Fees: ${collegeFeesTotal}`, margin, yPosition);
-    yPosition += 6;
-    doc.text(`Other Fees: ${otherFeesTotal}`, margin, yPosition);
-    yPosition += 8;
-    
-    doc.setFontSize(12);
-    doc.setFont(undefined, 'bold');
-    doc.text(`GRAND TOTAL: ${grandTotal}`, margin, yPosition);
-    doc.setFont(undefined, 'normal');
-    yPosition += 20;
-
-    // Agreement Section
-    doc.setFontSize(14);
-    doc.setTextColor(230, 81, 0);
-    doc.text('FINANCIAL RESPONSIBILITY AGREEMENT', margin, yPosition);
-    yPosition += 10;
-
-    doc.setFontSize(9);
-    doc.setTextColor(0, 0, 0);
-    const agreementText = [
-        `I, ${agreementData.studentName} (ID: ${agreementData.studentId}), hereby confirm that:`,
-        '1. I have read, understood, and agree to abide by all COSTAATT payment terms',
-        '2. I accept full financial responsibility for all tuition and fees',
-        '3. I understand GATE funding limitations for certain courses',
-        '4. I acknowledge payment deadlines and consequences',
-        '5. I agree to monitor my student account regularly',
-        '6. I understand financial obligations must be met before graduation'
-    ];
-
-    agreementText.forEach(line => {
-        if (yPosition > 270) {
-            doc.addPage();
-            yPosition = 20;
-        }
-        doc.text(line, margin, yPosition);
-        yPosition += 5;
-    });
-
-    yPosition += 10;
-    doc.text(`Digital Signature: ${agreementData.studentName}`, margin, yPosition);
-    yPosition += 5;
-    doc.text(`Accepted on: ${agreementData.agreementDate} at ${agreementData.agreementTime}`, margin, yPosition);
-    yPosition += 15;
-
-    // Disclaimer
-    doc.setFontSize(8);
-    doc.setTextColor(100, 100, 100);
-    const disclaimer = 'This report is for estimation purposes only. Final amounts must be verified with the Bursar\'s Office. All figures in TTD. Generated by COSTAATT Fee Calculator.';
-    
-    const splitDisclaimer = doc.splitTextToSize(disclaimer, pageWidth - 2 * margin);
-    doc.text(splitDisclaimer, pageWidth / 2, 280, { align: 'center' });
-}
-
-// Replace the existing downloadFeeReport function
-function downloadFeeReport() {
-    generatePDFReport();
-}
-function showTemporaryMessage(message, type) {
-    const messageDiv = document.createElement('div');
-    messageDiv.textContent = message;
-    messageDiv.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : '#ff9800'};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        z-index: 1001;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    `;
-    
-    document.body.appendChild(messageDiv);
-    
-    setTimeout(() => {
-        messageDiv.style.opacity = '0';
-        messageDiv.style.transform = 'translateX(100px)';
-        setTimeout(() => {
-            document.body.removeChild(messageDiv);
-        }, 300);
-    }, 3000);
+  document.getElementById('noticePopup').classList.remove('show');
+  document.getElementById('noticeOverlay').classList.remove('show');
 }
 
 // Close popup when pressing Escape key
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closePaymentNotice();
-    }
+  if (event.key === 'Escape') {
+    closePaymentNotice();
+  }
 });
-
-// Update download section visibility when totals change
-function updateGrandTotal() {
-    const tuitionTotal = parseFloat(document.getElementById('displayTuitionTotal').textContent.replace('$', '')) || 0;
-    const collegeFeesTotal = parseFloat(document.getElementById('displayCollegeFeesTotal').textContent.replace('$', '')) || 0;
-    const otherFeesTotal = parseFloat(document.getElementById('displayOtherFeesTotal').textContent.replace('$', '')) || 0;
-    const grandTotal = tuitionTotal + collegeFeesTotal + otherFeesTotal;
-    document.getElementById('grandTotal').textContent = `$${grandTotal.toFixed(2)}`;
-    
-    // Show download section if agreement is accepted and there are fees
-    if (agreementData.accepted && grandTotal > 0) {
-        document.getElementById('downloadSection').style.display = 'block';
-    }
-}
      
     const studentTypes = ['Local National', 'Caricom National', 'International National'];
     const courseOptions = ['Compass Course', 'Undergraduate Course', 'Repeated Course'];
